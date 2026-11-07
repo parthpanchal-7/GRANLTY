@@ -1,0 +1,6 @@
+{
+  "name": "GRANTLY — Unified Scholarship Discovery & Management Platform",
+  "description": "Lusion-inspired Daylight interactive scholarship discovery, OTR registration, Smart Dossier verification, Institute Nodal Officer audit, and PFMS direct benefit transfer platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

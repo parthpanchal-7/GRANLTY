@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: grantly-scholarship-platform
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist/app/browser
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

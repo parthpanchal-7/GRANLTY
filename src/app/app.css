@@ -1,0 +1,40 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes caretBlink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.hero-typewriter-caret {
+  display: inline-block;
+  width: 0.08em;
+  height: 0.88em;
+  margin-left: 0.04em;
+  vertical-align: -0.08em;
+  background-color: #2B44FF;
+  border-radius: 2px;
+  animation: caretBlink 0.75s steps(1) infinite;
+}
+
+.hero-typewriter-caret-idle {
+  animation: caretBlink 1.1s steps(1) 3 forwards;
+  opacity: 0;
+}
+

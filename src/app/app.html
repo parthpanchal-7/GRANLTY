@@ -1,0 +1,1975 @@
+<!-- 1. SEQUENTIAL G-R-A-N-T-L-Y PRELOADER OVERLAY -->
+@if (!preloaderUnlocked()) {
+  <div
+    data-testid="grantly-preloader"
+    class="fixed inset-0 z-50 bg-[#F4F6FA] flex flex-col justify-between px-8 py-8 select-none"
+  >
+    <!-- Top Header inside Preloader -->
+    <div class="flex items-center justify-between text-xs font-mono-tabular text-[#5A6275]">
+      <span>NATIONAL SCHOLARSHIP DISCOVERY &amp; DBT ARCHITECTURE</span>
+      <button
+        type="button"
+        (click)="unlockImmediately()"
+        class="px-3 py-1.5 rounded-lg border border-[#DCE2EE] bg-white text-[#0D0F17] font-semibold hover:border-[#2B44FF] cursor-pointer"
+      >
+        Enter Platform ↗
+      </button>
+    </div>
+
+    <!-- Center Sequential G-R-A-N-T-L-Y Typography Stage -->
+    <div class="my-auto flex flex-col items-center justify-center">
+      <div
+        class="flex items-center justify-center gap-1 sm:gap-3 overflow-hidden py-4"
+        aria-label="GRANTLY"
+      >
+        @for (item of preloaderLetters(); track item.index) {
+          <span
+            class="inline-block overflow-hidden"
+            data-testid="preloader-letter-slot"
+          >
+            <span
+              class="inline-block font-display text-6xl sm:text-8xl md:text-9xl font-extrabold text-[#0D0F17] transition-all duration-300 ease-out"
+              [class.translate-y-0]="item.visible"
+              [class.opacity-100]="item.visible"
+              [class.translate-y-full]="!item.visible"
+              [class.opacity-0]="!item.visible"
+            >
+              {{ item.char }}
+            </span>
+          </span>
+        }
+      </div>
+      <p class="mt-3 text-xs sm:text-sm font-mono-tabular text-[#5A6275] tracking-wide">
+        SYNCHRONIZING OTR VAULT · AISHE L1 NODES · PFMS DIRECT BENEFIT BRIDGE
+      </p>
+    </div>
+
+    <!-- Bottom Live Countdown HUD inside Preloader -->
+    <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#DCE2EE] text-xs font-mono-tabular">
+      <div class="flex items-center gap-2 text-[#0D0F17] font-semibold">
+        <span class="text-[#5A6275]">SCHOLARSHIP CYCLE LOCKS IN:</span>
+        <span class="text-[#2B44FF] font-bold">{{ countdownDisplay() }}</span>
+      </div>
+      <span class="text-[#5A6275]">AY 2026–27 UNIFIED WINDOW</span>
+    </div>
+  </div>
+}
+
+<!-- 2. FIXED THREE.JS DAYLIGHT WEBGL STAGE -->
+<app-three-stage [scrollProgress]="scrollProgress()" />
+
+<!-- 3. TOP BAR CONTRACT (Strictly 3 Zones separated by gap-8) -->
+<header
+  class="sticky top-0 z-30 flex items-center justify-between gap-8 px-6 md:px-10 py-4 bg-[#F4F6FA]/90 border-b border-[#DCE2EE]"
+>
+  <!-- Zone 1: Single text element wordmark -->
+  <a
+    href="#top"
+    class="font-display text-xl font-extrabold tracking-tight text-[#0D0F17] whitespace-nowrap shrink-0"
+  >
+    GRANTLY
+  </a>
+
+  <!-- Zone 2: 5 concise single-line navigation links -->
+  <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-[#5A6275]" aria-label="Primary Navigation">
+    <a
+      href="#flashcard-01"
+      class="hover:text-[#0D0F17] hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
+    >
+      Benefits Slab
+    </a>
+    <a
+      href="#flashcard-02"
+      class="hover:text-[#0D0F17] hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
+    >
+      Eligibility Matrix
+    </a>
+    <a
+      href="#flashcard-03"
+      class="hover:text-[#0D0F17] hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
+    >
+      OTR Pipeline
+    </a>
+    <a
+      href="#flashcard-04"
+      class="hover:text-[#0D0F17] hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
+    >
+      Scholarships
+    </a>
+    <a
+      href="#profile-auth-section"
+      class="hover:text-[#0D0F17] hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
+    >
+      Profile &amp; Sign In
+    </a>
+  </nav>
+
+  <!-- Zone 3: 1 Primary Action Button -->
+  <div class="flex items-center shrink-0">
+    <button
+      type="button"
+      (click)="openPortalFromCard('STUDENT', 'BROWSER')"
+      class="px-4 py-2 text-xs font-semibold text-white bg-[#2B44FF] hover:bg-[#1E36E0] rounded-xl transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer shadow-xs"
+    >
+      <mat-icon class="!text-sm !w-4 !h-4 leading-none">bolt</mat-icon>
+      <span>Open Student Portal</span>
+    </button>
+  </div>
+</header>
+
+<!-- 4. MAIN DAYLIGHT SCROLL STAGE WITH CENTRAL CUBIC-BEZIER SVG SPINE -->
+<main id="top" class="relative z-10 overflow-x-hidden pb-28">
+  <!-- HERO PROPOSITION SECTION -->
+  <section class="max-w-7xl mx-auto px-6 md:px-10 pt-14 pb-16">
+    <div class="max-w-3xl space-y-6">
+      <div class="flex flex-wrap items-center gap-2 text-xs font-mono-tabular text-[#5A6275]">
+        <span class="font-semibold text-[#2B44FF]">NATIONAL SCHOLARSHIP &amp; FELLOWSHIP INFRASTRUCTURE</span>
+        <span aria-hidden="true">·</span>
+        <span>OTR e-KYC</span>
+        <span aria-hidden="true">·</span>
+        <span>AISHE L1 Verification</span>
+        <span aria-hidden="true">·</span>
+        <span>PFMS Direct Benefit Transfer</span>
+      </div>
+
+      <h1
+        data-testid="hero-typewriter-h1"
+        [attr.aria-label]="heroFullText"
+        class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0D0F17] leading-[1.06] tracking-tight relative"
+        style="text-wrap: balance"
+      >
+        <span aria-hidden="true">{{ typedHeroText() }}</span><span
+          aria-hidden="true"
+          class="hero-typewriter-caret"
+          [class.hero-typewriter-caret-idle]="heroTypingComplete()"
+        ></span><span aria-hidden="true" class="opacity-0 select-none pointer-events-none">{{ unTypedHeroText() }}</span>
+      </h1>
+
+      <p class="text-base sm:text-lg text-[#5A6275] leading-relaxed max-w-2xl">
+        GRANTLY brings together Unstop-inspired real-time scholarship discovery and the National Scholarship Portal (NSP) verification lifecycle into one seamless workspace—connecting One-Time Registration (OTR), instant Smart Dossier OCR checks, Institute Nodal Officer (INO) audits, and direct PFMS bank disbursals.
+      </p>
+
+      <div class="flex flex-wrap items-center gap-4 pt-2">
+        <button
+          type="button"
+          (click)="openPortalFromCard('STUDENT', 'BROWSER')"
+          class="px-6 py-3 text-sm font-semibold text-white bg-[#2B44FF] hover:bg-[#1E36E0] rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-sm whitespace-nowrap"
+        >
+          <mat-icon class="!text-base !w-4 !h-4 leading-none">explore</mat-icon>
+          <span>Launch Scholarship Workspace</span>
+        </button>
+
+        <a
+          href="#pendulum-portals"
+          class="px-5 py-3 text-sm font-semibold text-[#0D0F17] bg-white hover:bg-[#E8ECF4] border border-[#DCE2EE] rounded-xl transition-all flex items-center gap-2 whitespace-nowrap"
+        >
+          <mat-icon class="!text-base !w-4 !h-4 leading-none">account_tree</mat-icon>
+          <span>Jump to 3 Role Portals</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quantified Proof Strip (Adjacent to Hero Claim) -->
+    <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 pt-8 border-t border-[#DCE2EE]">
+      <div class="bg-white/90 p-5 rounded-2xl border border-[#DCE2EE]">
+        <span class="block text-xs text-[#5A6275]">Active Schemes in Catalog</span>
+        <span class="font-mono-tabular text-2xl sm:text-3xl font-extrabold text-[#0D0F17]">
+          {{ store.schemes().length }} Gazetted
+        </span>
+        <span class="block text-[11px] text-[#5A6275] mt-1">Central Govt, AICTE/UGC &amp; CSR</span>
+      </div>
+
+      <div class="bg-white/90 p-5 rounded-2xl border border-[#DCE2EE]">
+        <span class="block text-xs text-[#5A6275]">100% Eligible for Current OTR</span>
+        <span class="font-mono-tabular text-2xl sm:text-3xl font-extrabold text-[#2B44FF]">
+          {{ store.eligibilityBreakdown().eligible }} / {{ store.eligibilityBreakdown().total }} Schemes
+        </span>
+        <span class="block text-[11px] text-[#5A6275] mt-1">
+          OTR: {{ store.studentProfile().otrId }}
+        </span>
+      </div>
+
+      <div class="bg-white/90 p-5 rounded-2xl border border-[#DCE2EE]">
+        <span class="block text-xs text-[#5A6275]">Estimated Annual Aid Slab</span>
+        <span class="font-mono-tabular text-2xl sm:text-3xl font-extrabold text-[#0D0F17]">
+          {{ formatInr(store.aidSlabResult().totalAnnualAid) }}
+        </span>
+        <span class="block text-[11px] text-[#5A6275] mt-1">
+          {{ store.aidSlabResult().reimbursementRatio }}% Tuition + Hostel Grant
+        </span>
+      </div>
+
+      <div class="bg-white/90 p-5 rounded-2xl border border-[#DCE2EE]">
+        <span class="block text-xs text-[#5A6275]">Active Applications in Pipeline</span>
+        <span class="font-mono-tabular text-2xl sm:text-3xl font-extrabold text-emerald-700">
+          {{ store.applications().length }} Tracked
+        </span>
+        <span class="block text-[11px] text-[#5A6275] mt-1">
+          Live Student, INO &amp; Ministry Sync
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CENTRAL SVG CUBIC-BEZIER FLOWING SPINE + 4 INTERACTIVE FLASHCARDS + 3 PENDULUM LEAVES -->
+  <div class="relative max-w-7xl mx-auto px-6 md:px-10">
+    <!-- Decorative & Functional Central SVG Flowing Spine -->
+    <div
+      class="pointer-events-none absolute inset-x-0 top-0 bottom-0 flex justify-center z-0 overflow-hidden"
+      aria-hidden="true"
+    >
+      <svg
+        data-testid="lusion-svg-spine"
+        viewBox="0 0 1200 2450"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-full max-w-[1200px] h-full preserve-3d"
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <linearGradient id="lusionSpineGradient" x1="600" y1="0" x2="600" y2="2450" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#2B44FF" />
+            <stop offset="55%" stop-color="#4F46E5" />
+            <stop offset="100%" stop-color="#6366F1" />
+          </linearGradient>
+          <filter id="cobaltGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="6" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+
+        <!-- Base Hairline Guide Path (#DCE2EE) - Dynamically Undulates with Scroll like Lusion.co -->
+        <path
+          [attr.d]="spineAnchors().pathD"
+          stroke="#DCE2EE"
+          stroke-width="2"
+          stroke-dasharray="6 6"
+        />
+
+        <!-- Active Scroll-Drawn & Scroll-Movable Cubic-Bezier Spine (#2B44FF -> #6366F1) -->
+        <path
+          data-testid="lusion-active-spine-path"
+          [attr.d]="spineAnchors().pathD"
+          stroke="url(#lusionSpineGradient)"
+          stroke-width="3.5"
+          stroke-linecap="round"
+          [attr.stroke-dasharray]="spineTotalLength"
+          [attr.stroke-dashoffset]="spineDashOffset()"
+        />
+
+        <!-- Dynamic Branch Anchor Nodes -->
+        <circle [attr.cx]="spineAnchors().n1.x" [attr.cy]="spineAnchors().n1.y" r="6" fill="#FFFFFF" stroke="#2B44FF" stroke-width="3" />
+        <circle [attr.cx]="spineAnchors().n2.x" [attr.cy]="spineAnchors().n2.y" r="6" fill="#FFFFFF" stroke="#2B44FF" stroke-width="3" />
+        <circle [attr.cx]="spineAnchors().n3.x" [attr.cy]="spineAnchors().n3.y" r="6" fill="#FFFFFF" stroke="#2B44FF" stroke-width="3" />
+        <circle [attr.cx]="spineAnchors().n4.x" [attr.cy]="spineAnchors().n4.y" r="6" fill="#FFFFFF" stroke="#2B44FF" stroke-width="3" />
+        <circle [attr.cx]="spineAnchors().terminal.x" [attr.cy]="spineAnchors().terminal.y" r="7" fill="#2B44FF" />
+
+        <!-- Glowing Cobalt Leader Dot at Drawing Tip -->
+        <circle
+          data-testid="spine-leader-dot"
+          [attr.cx]="leaderDotPoint().x"
+          [attr.cy]="leaderDotPoint().y"
+          r="9"
+          fill="#2B44FF"
+          filter="url(#cobaltGlow)"
+        />
+      </svg>
+    </div>
+
+    <!-- SPINE FLASHCARDS STACK -->
+    <div class="relative z-10 space-y-20 pt-6">
+      <!-- =============================================================== -->
+      <!-- FLASHCARD 01: BENEFITS & FINANCIAL AID SLABS                    -->
+      <!-- =============================================================== -->
+      <section
+        id="flashcard-01"
+        data-testid="spine-flashcard-01"
+        class="lusion-card rounded-3xl p-6 sm:p-9 max-w-4xl mr-auto"
+      >
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-5 mb-6 border-b border-[#DCE2EE]">
+          <div>
+            <div class="text-xs font-mono-tabular font-semibold text-[#2B44FF]">
+              01. BENEFITS &amp; FINANCIAL AID SLABS
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[#0D0F17] mt-1">
+              Interactive Tuition Waiver &amp; Hostel Stipend Calculator
+            </h2>
+          </div>
+
+          <button
+            type="button"
+            data-testid="explore-btn-01"
+            (click)="openPortalFromCard('STUDENT', 'BROWSER')"
+            class="px-4 py-2.5 text-xs font-mono-tabular font-bold text-[#0D0F17] bg-[#F4F6FA] hover:bg-[#2B44FF] hover:text-white border border-[#DCE2EE] rounded-xl transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+          >
+            <span>[ EXPLORE ↗ ]</span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Controls Column -->
+          <div class="lg:col-span-7 space-y-6">
+            <!-- Family Income Range Slider -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <label for="fc01-income-slider" class="font-semibold text-[#0D0F17]">
+                  Annual Family Income Ceiling (₹1,00,000 – ₹8,00,000)
+                </label>
+                <span
+                  data-testid="fc01-income-value"
+                  class="font-mono-tabular text-base font-extrabold text-[#2B44FF]"
+                >
+                  {{ formatInr(store.calcIncome()) }} / yr
+                </span>
+              </div>
+              <input
+                id="fc01-income-slider"
+                data-testid="fc01-income-slider"
+                type="range"
+                min="100000"
+                max="800000"
+                step="25000"
+                [value]="store.calcIncome()"
+                (input)="onIncomeSliderChange($event)"
+                class="w-full accent-[#2B44FF] cursor-pointer h-2 bg-[#E2E8F0] rounded-lg"
+              />
+              <div class="flex justify-between text-[11px] font-mono-tabular text-[#5A6275]">
+                <span>₹1.0L (100% Waiver)</span>
+                <span>₹4.5L (Merit-cum-Means)</span>
+                <span>₹8.0L (EWS/OBC Cap)</span>
+              </div>
+            </div>
+
+            <!-- Course Level Selector -->
+            <div class="space-y-2">
+              <span class="block text-xs font-semibold text-[#0D0F17]">
+                Select Academic Course Degree Level
+              </span>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                @for (lvl of courseLevels; track lvl.id) {
+                  <button
+                    type="button"
+                    (click)="store.calcCourse.set(lvl.id)"
+                    [class]="
+                      store.calcCourse() === lvl.id
+                        ? 'px-3 py-2 text-xs font-semibold rounded-xl bg-[#0D0F17] text-white transition-all cursor-pointer whitespace-nowrap truncate'
+                        : 'px-3 py-2 text-xs font-medium rounded-xl bg-[#F4F6FA] text-[#5A6275] hover:text-[#0D0F17] border border-[#DCE2EE] transition-all cursor-pointer whitespace-nowrap truncate'
+                    "
+                  >
+                    {{ lvl.label }}
+                  </button>
+                }
+              </div>
+            </div>
+
+            <!-- Residence Mode -->
+            <div class="flex items-center justify-between pt-2">
+              <span class="text-xs font-semibold text-[#0D0F17]">Scholar Residence Status</span>
+              <div class="flex items-center gap-1 p-1 bg-[#F4F6FA] border border-[#DCE2EE] rounded-xl">
+                <button
+                  type="button"
+                  (click)="store.calcResidence.set('HOSTELLER')"
+                  [class]="
+                    store.calcResidence() === 'HOSTELLER'
+                      ? 'px-3 py-1.5 text-xs font-semibold rounded-lg bg-white text-[#0D0F17] shadow-2xs cursor-pointer whitespace-nowrap'
+                      : 'px-3 py-1.5 text-xs font-medium text-[#5A6275] cursor-pointer whitespace-nowrap'
+                  "
+                >
+                  Hosteller (100% Stipend)
+                </button>
+                <button
+                  type="button"
+                  (click)="store.calcResidence.set('DAY_SCHOLAR')"
+                  [class]="
+                    store.calcResidence() === 'DAY_SCHOLAR'
+                      ? 'px-3 py-1.5 text-xs font-semibold rounded-lg bg-white text-[#0D0F17] shadow-2xs cursor-pointer whitespace-nowrap'
+                      : 'px-3 py-1.5 text-xs font-medium text-[#5A6275] cursor-pointer whitespace-nowrap'
+                  "
+                >
+                  Day Scholar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Output Breakdown Column -->
+          <div class="lg:col-span-5 bg-[#F4F6FA] p-6 rounded-2xl border border-[#DCE2EE] space-y-4">
+            <div class="text-xs font-mono-tabular font-semibold text-[#2B44FF]">
+              {{ store.aidSlabResult().tierLabel }}
+            </div>
+
+            <div class="space-y-2.5 text-xs border-b border-[#DCE2EE] pb-4">
+              <div class="flex justify-between">
+                <span class="text-[#5A6275]">Annual Tuition Fee Waiver:</span>
+                <span
+                  data-testid="fc01-tuition-output"
+                  class="font-mono-tabular font-bold text-[#0D0F17]"
+                >
+                  {{ formatInr(store.aidSlabResult().tuitionWaiver) }}
+                </span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#5A6275]">Hostel &amp; Maintenance Allowance:</span>
+                <span
+                  data-testid="fc01-hostel-output"
+                  class="font-mono-tabular font-bold text-[#0D0F17]"
+                >
+                  {{ formatInr(store.aidSlabResult().hostelMaintenance) }}
+                </span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#5A6275]">Academic Book &amp; Stationery Grant:</span>
+                <span class="font-mono-tabular font-bold text-[#0D0F17]">
+                  {{ formatInr(store.aidSlabResult().bookEquipmentGrant) }}
+                </span>
+              </div>
+            </div>
+
+            <div class="flex items-baseline justify-between">
+              <span class="text-xs font-bold text-[#0D0F17]">Total Annual PFMS DBT Grant</span>
+              <span
+                data-testid="fc01-total-aid"
+                class="font-mono-tabular text-2xl font-extrabold text-[#2B44FF]"
+              >
+                {{ formatInr(store.aidSlabResult().totalAnnualAid) }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- FLASHCARD 02: WHO CAN APPLY? — ELIGIBILITY MATRIX               -->
+      <!-- =============================================================== -->
+      <section
+        id="flashcard-02"
+        data-testid="spine-flashcard-02"
+        class="lusion-card rounded-3xl p-6 sm:p-9 max-w-4xl ml-auto"
+      >
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-5 mb-6 border-b border-[#DCE2EE]">
+          <div>
+            <div class="text-xs font-mono-tabular font-semibold text-[#2B44FF]">
+              02. WHO CAN APPLY? — LIVE ELIGIBILITY MATRIX
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[#0D0F17] mt-1">
+              Multi-Category &amp; Merit Cutoff Scheme Matcher
+            </h2>
+          </div>
+
+          <button
+            type="button"
+            data-testid="explore-btn-02"
+            (click)="openPortalFromCard('STUDENT', 'OTR_PROFILE')"
+            class="px-4 py-2.5 text-xs font-mono-tabular font-bold text-[#0D0F17] bg-[#F4F6FA] hover:bg-[#2B44FF] hover:text-white border border-[#DCE2EE] rounded-xl transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+          >
+            <span>[ EXPLORE ↗ ]</span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <!-- Interactive Social Category Filter Controls -->
+            <div class="space-y-2">
+              <span class="block text-xs font-semibold text-[#0D0F17]">
+                Toggle Social &amp; Statutory Quota Categories
+              </span>
+              <div class="flex flex-wrap gap-2">
+                @for (cat of allCategories; track cat) {
+                  @let isSelected = store.matrixCategories().includes(cat);
+                  <button
+                    type="button"
+                    (click)="store.toggleMatrixCategory(cat)"
+                    [class]="
+                      isSelected
+                        ? 'px-3.5 py-2 text-xs font-semibold rounded-xl bg-[#2B44FF] text-white transition-all cursor-pointer whitespace-nowrap'
+                        : 'px-3.5 py-2 text-xs font-medium rounded-xl bg-[#F4F6FA] text-[#5A6275] hover:text-[#0D0F17] border border-[#DCE2EE] transition-all cursor-pointer whitespace-nowrap'
+                    "
+                  >
+                    {{ cat }}
+                  </button>
+                }
+              </div>
+            </div>
+
+            <!-- Minimum Qualifying Marks Slider -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <label for="fc02-marks-slider" class="font-semibold text-[#0D0F17]">
+                  Qualifying Exam Aggregate Score (60% – 98%)
+                </label>
+                <span
+                  data-testid="fc02-marks-value"
+                  class="font-mono-tabular text-base font-extrabold text-[#2B44FF]"
+                >
+                  {{ store.matrixMinMarks() }}% Aggregate
+                </span>
+              </div>
+              <input
+                id="fc02-marks-slider"
+                data-testid="fc02-marks-slider"
+                type="range"
+                min="60"
+                max="98"
+                step="1"
+                [value]="store.matrixMinMarks()"
+                (input)="onMarksSliderChange($event)"
+                class="w-full accent-[#2B44FF] cursor-pointer h-2 bg-[#E2E8F0] rounded-lg"
+              />
+            </div>
+          </div>
+
+          <!-- Real-Time Matching Scheme Counter -->
+          <div class="lg:col-span-5 bg-[#F4F6FA] p-6 rounded-2xl border border-[#DCE2EE] space-y-4">
+            <div class="flex items-baseline justify-between">
+              <span class="text-xs font-semibold text-[#5A6275]">Matching Active Schemes</span>
+              <span
+                data-testid="fc02-match-count"
+                class="font-mono-tabular text-3xl font-extrabold text-[#2B44FF]"
+              >
+                {{ store.matrixMatchingSchemes().length }} / {{ store.schemes().length }}
+              </span>
+            </div>
+
+            <div class="space-y-2 pt-2 border-t border-[#DCE2EE]">
+              @for (s of store.matrixMatchingSchemes().slice(0, 3); track s.id) {
+                <div class="flex items-center justify-between text-xs py-1">
+                  <span class="font-medium text-[#0D0F17] truncate pr-2">{{ s.title }}</span>
+                  <span class="font-mono-tabular font-semibold text-[#2B44FF] shrink-0">
+                    {{ formatInr(s.annualAward) }}
+                  </span>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- FLASHCARD 03: HOW TO APPLY — 4-STEP PIPELINE                    -->
+      <!-- =============================================================== -->
+      <section
+        id="flashcard-03"
+        data-testid="spine-flashcard-03"
+        class="lusion-card rounded-3xl p-6 sm:p-9 max-w-4xl mr-auto"
+      >
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-5 mb-6 border-b border-[#DCE2EE]">
+          <div>
+            <div class="text-xs font-mono-tabular font-semibold text-[#2B44FF]">
+              03. HOW TO APPLY — 4-STEP ARCHITECTURE PIPELINE
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[#0D0F17] mt-1">
+              From One-Time Registration to PFMS Direct Bank Credit
+            </h2>
+          </div>
+
+          <button
+            type="button"
+            data-testid="explore-btn-03"
+            (click)="openPortalFromCard('STUDENT', 'DOSSIER')"
+            class="px-4 py-2.5 text-xs font-mono-tabular font-bold text-[#0D0F17] bg-[#F4F6FA] hover:bg-[#2B44FF] hover:text-white border border-[#DCE2EE] rounded-xl transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+          >
+            <span>[ EXPLORE ↗ ]</span>
+          </button>
+        </div>
+
+        <!-- Stepper Navigation Buttons -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+          @for (step of pipelineSteps; track step.stepNumber; let idx = $index) {
+            <button
+              type="button"
+              (click)="store.activePipelineStep.set(idx)"
+              [class]="
+                store.activePipelineStep() === idx
+                  ? 'p-3.5 rounded-2xl bg-[#0D0F17] text-white text-left space-y-1 transition-all cursor-pointer'
+                  : 'p-3.5 rounded-2xl bg-[#F4F6FA] text-[#0D0F17] hover:border-[#2B44FF] border border-[#DCE2EE] text-left space-y-1 transition-all cursor-pointer'
+              "
+            >
+              <div
+                class="font-mono-tabular text-xs font-bold"
+                [class.text-[#6366F1]]="store.activePipelineStep() === idx"
+                [class.text-[#2B44FF]]="store.activePipelineStep() !== idx"
+              >
+                STEP {{ step.stepNumber }}
+              </div>
+              <div class="text-xs font-bold line-clamp-1">{{ step.title }}</div>
+            </button>
+          }
+        </div>
+
+        <!-- Active Step Detail Box -->
+        @let currentStep = pipelineSteps[store.activePipelineStep()];
+        <div class="bg-[#F4F6FA] p-6 rounded-2xl border border-[#DCE2EE] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div class="space-y-2 max-w-xl">
+            <div class="text-xs font-mono-tabular text-[#2B44FF] font-semibold">
+              STAGE {{ currentStep.stepNumber }} · {{ currentStep.authority }}
+            </div>
+            <h3 class="font-display text-lg font-bold text-[#0D0F17]">
+              {{ currentStep.title }}
+            </h3>
+            <p class="text-xs sm:text-sm text-[#5A6275] leading-relaxed">
+              {{ currentStep.description }}
+            </p>
+            <div class="pt-1 text-xs font-mono-tabular font-semibold text-[#0D0F17]">
+              Service Benchmark: {{ currentStep.slaMetric }}
+            </div>
+          </div>
+
+          <button
+            type="button"
+            (click)="openPortalFromCard(currentStep.targetPortal, currentStep.targetSubTab)"
+            class="px-4 py-2.5 text-xs font-semibold text-white bg-[#2B44FF] hover:bg-[#1E36E0] rounded-xl flex items-center gap-1.5 shrink-0 cursor-pointer whitespace-nowrap"
+          >
+            <mat-icon class="!text-sm !w-4 !h-4 leading-none">launch</mat-icon>
+            <span>Test Stage {{ currentStep.stepNumber }} Live</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- FLASHCARD 04: EXPLORE SCHOLARSHIPS & GLOBAL EXTERNAL LINKS      -->
+      <!-- =============================================================== -->
+      <section
+        id="flashcard-04"
+        data-testid="spine-flashcard-04"
+        class="lusion-card rounded-3xl p-6 sm:p-9 max-w-5xl ml-auto"
+      >
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-5 mb-6 border-b border-[#DCE2EE]">
+          <div>
+            <div class="text-xs font-mono-tabular font-semibold text-[#2B44FF]">
+              04. EXPLORE ACTIVE &amp; GLOBAL SCHOLARSHIPS
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[#0D0F17] mt-1">
+              National OTR Schemes &amp; External / Global Application Links
+            </h2>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <div class="flex flex-wrap items-center gap-1 p-1 bg-[#F4F6FA] border border-[#DCE2EE] rounded-xl">
+              <button
+                type="button"
+                (click)="showcaseFilter.set('ALL')"
+                [class]="
+                  showcaseFilter() === 'ALL'
+                    ? 'px-3 py-1.5 text-xs font-semibold rounded-lg bg-white text-[#0D0F17] shadow-2xs cursor-pointer whitespace-nowrap'
+                    : 'px-3 py-1.5 text-xs font-medium text-[#5A6275] cursor-pointer whitespace-nowrap'
+                "
+              >
+                All Schemes
+              </button>
+              <button
+                type="button"
+                (click)="showcaseFilter.set('ELIGIBLE')"
+                [class]="
+                  showcaseFilter() === 'ELIGIBLE'
+                    ? 'px-3 py-1.5 text-xs font-semibold rounded-lg bg-white text-emerald-700 shadow-2xs cursor-pointer whitespace-nowrap'
+                    : 'px-3 py-1.5 text-xs font-medium text-[#5A6275] cursor-pointer whitespace-nowrap'
+                "
+              >
+                100% Eligible
+              </button>
+              <button
+                type="button"
+                (click)="showcaseFilter.set('CENTRAL')"
+                [class]="
+                  showcaseFilter() === 'CENTRAL'
+                    ? 'px-3 py-1.5 text-xs font-semibold rounded-lg bg-white text-[#2B44FF] shadow-2xs cursor-pointer whitespace-nowrap'
+                    : 'px-3 py-1.5 text-xs font-medium text-[#5A6275] cursor-pointer whitespace-nowrap'
+                "
+              >
+                Central Ministries
+              </button>
+              <button
+                type="button"
+                data-testid="fc04-external-tab"
+                (click)="showcaseFilter.set('EXTERNAL')"
+                [class]="
+                  showcaseFilter() === 'EXTERNAL'
+                    ? 'px-3 py-1.5 text-xs font-semibold rounded-lg bg-white text-[#2B44FF] shadow-2xs cursor-pointer whitespace-nowrap'
+                    : 'px-3 py-1.5 text-xs font-medium text-[#5A6275] cursor-pointer whitespace-nowrap'
+                "
+              >
+                Global &amp; External Links ({{ store.externalLinks().length }})
+              </button>
+            </div>
+
+            <button
+              type="button"
+              data-testid="explore-btn-04"
+              (click)="openPortalFromCard('STUDENT', 'BROWSER')"
+              class="px-4 py-2.5 text-xs font-mono-tabular font-bold text-[#0D0F17] bg-[#F4F6FA] hover:bg-[#2B44FF] hover:text-white border border-[#DCE2EE] rounded-xl transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+            >
+              <span>[ EXPLORE ↗ ]</span>
+            </button>
+          </div>
+        </div>
+
+        @if (showcaseFilter() !== 'EXTERNAL') {
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            @for (scheme of showcaseSchemes(); track scheme.id) {
+              @let evalItem = store.schemeEvaluations().get(scheme.id);
+              <div class="p-5 rounded-2xl bg-[#F4F6FA] border border-[#DCE2EE] flex flex-col justify-between gap-4">
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between text-xs font-mono-tabular">
+                    <span class="text-[#2B44FF] font-semibold">
+                      {{ scheme.code }} · Closes in {{ scheme.deadlineDays }}d
+                    </span>
+                    @if (evalItem?.status === 'ELIGIBLE') {
+                      <span class="text-emerald-700 font-bold">100% ELIGIBLE</span>
+                    } @else if (evalItem?.status === 'DOC_MISSING') {
+                      <span class="text-amber-700 font-bold">DOC MISSING ({{ evalItem?.matchPercent }}%)</span>
+                    } @else {
+                      <span class="text-rose-700 font-bold">INELIGIBLE</span>
+                    }
+                  </div>
+                  <h3 class="font-display text-base font-bold text-[#0D0F17] leading-snug">
+                    {{ scheme.title }}
+                  </h3>
+                  <p class="text-xs text-[#5A6275]">{{ scheme.ministry }}</p>
+                </div>
+
+                <div class="flex items-center justify-between pt-3 border-t border-[#DCE2EE]">
+                  <div>
+                    <span class="block text-[11px] text-[#5A6275]">Annual Grant</span>
+                    <span class="font-mono-tabular text-base font-extrabold text-[#0D0F17]">
+                      {{ formatInr(scheme.annualAward) }} / yr
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button
+                      type="button"
+                      (click)="openPortalFromCard('STUDENT', 'BROWSER')"
+                      class="px-3 py-2 text-xs font-semibold text-[#0D0F17] bg-white hover:bg-[#E2E8F0] border border-[#DCE2EE] rounded-xl flex items-center gap-1 cursor-pointer whitespace-nowrap"
+                    >
+                      <mat-icon class="!text-sm !w-4 !h-4 leading-none">visibility</mat-icon>
+                      <span>Inspect Details</span>
+                    </button>
+                    <button
+                      type="button"
+                      [attr.data-testid]="'landing-apply-' + scheme.id"
+                      (click)="handleSchemeApplyFromLanding(scheme.id)"
+                      class="px-3.5 py-2 text-xs font-semibold text-white bg-[#2B44FF] hover:bg-[#1E36E0] rounded-xl flex items-center gap-1 cursor-pointer whitespace-nowrap"
+                    >
+                      <mat-icon class="!text-sm !w-4 !h-4 leading-none">send</mat-icon>
+                      <span>{{ store.isStudentSignedIn() ? 'Apply via OTR' : 'Sign In to Apply' }}</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        } @else {
+          <!-- Global & External Non-Registered Institute/Ministry Scholarship Links -->
+          <div class="space-y-5">
+            <div class="flex flex-wrap items-center justify-between gap-3 bg-[#F4F6FA] p-4 rounded-2xl border border-[#DCE2EE]">
+              <div class="space-y-0.5">
+                <div class="text-xs font-bold text-[#0D0F17]">
+                  Global &amp; Separate-Portal Scholarships (Non-Registered Institutes / Ministries)
+                </div>
+                <p class="text-xs text-[#5A6275]">
+                  Explore international fellowships or paste direct portal links when an institute or ministry accepts separate applications outside unified NSP.
+                </p>
+              </div>
+              <button
+                type="button"
+                data-testid="toggle-paste-external-link-btn"
+                (click)="showExternalSubmitForm.set(!showExternalSubmitForm())"
+                class="px-4 py-2 text-xs font-semibold text-white bg-[#0D0F17] hover:bg-[#2B44FF] rounded-xl flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+              >
+                <mat-icon class="!text-sm !w-4 !h-4 leading-none">add_link</mat-icon>
+                <span>{{ showExternalSubmitForm() ? 'Close Link Form' : 'Paste External Scholarship Link' }}</span>
+              </button>
+            </div>
+
+            @if (showExternalSubmitForm()) {
+              <form
+                [formGroup]="externalLinkForm"
+                (ngSubmit)="submitExternalScholarshipLink()"
+                class="bg-[#F4F6FA] p-5 rounded-2xl border border-[#2B44FF]/40 space-y-4"
+              >
+                <div class="text-xs font-mono-tabular font-bold text-[#2B44FF]">
+                  INDEX EXTERNAL / GLOBAL SCHOLARSHIP LINK FOR ALL STUDENTS
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div>
+                    <label for="ext-title" class="block text-xs font-medium text-[#5A6275] mb-1">
+                      Scholarship / Fellowship Title
+                    </label>
+                    <input
+                      id="ext-title"
+                      data-testid="ext-title-input"
+                      type="text"
+                      formControlName="title"
+                      placeholder="e.g. Rhodes / Gates Cambridge / State Portal"
+                      class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                    />
+                  </div>
+                  <div>
+                    <label for="ext-provider" class="block text-xs font-medium text-[#5A6275] mb-1">
+                      University / Ministry / Trust Name
+                    </label>
+                    <input
+                      id="ext-provider"
+                      data-testid="ext-provider-input"
+                      type="text"
+                      formControlName="providerName"
+                      placeholder="e.g. University of Cambridge"
+                      class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                    />
+                  </div>
+                  <div>
+                    <label for="ext-url" class="block text-xs font-medium text-[#5A6275] mb-1">
+                      Official Application Link (Paste URL)
+                    </label>
+                    <input
+                      id="ext-url"
+                      data-testid="ext-url-input"
+                      type="text"
+                      formControlName="externalUrl"
+                      placeholder="https://..."
+                      class="w-full px-3 py-2 text-xs font-mono-tabular bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                    />
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div>
+                    <label for="ext-scope" class="block text-xs font-medium text-[#5A6275] mb-1">
+                      Application Scope
+                    </label>
+                    <select
+                      id="ext-scope"
+                      formControlName="scope"
+                      class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                    >
+                      <option value="Global / International">Global / International</option>
+                      <option value="External University / Institute">External University / Institute</option>
+                      <option value="Autonomous Ministry Portal">Autonomous Ministry Portal</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="ext-award" class="block text-xs font-medium text-[#5A6275] mb-1">
+                      Grant Value / Stipend
+                    </label>
+                    <input
+                      id="ext-award"
+                      type="text"
+                      formControlName="annualAwardText"
+                      class="w-full px-3 py-2 text-xs font-mono-tabular bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                    />
+                  </div>
+                  <div class="flex items-end">
+                    <button
+                      type="submit"
+                      data-testid="submit-external-link-btn"
+                      class="w-full py-2 px-4 text-xs font-semibold text-white bg-[#2B44FF] hover:bg-[#1E36E0] rounded-xl flex items-center justify-center gap-1.5 cursor-pointer"
+                    >
+                      <mat-icon class="!text-sm !w-4 !h-4 leading-none">publish</mat-icon>
+                      <span>Save External Scholarship Link</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            }
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              @for (ext of store.externalLinks(); track ext.id) {
+                <div class="p-5 rounded-2xl bg-[#F4F6FA] border border-[#DCE2EE] flex flex-col justify-between gap-4">
+                  <div class="space-y-2">
+                    <div class="flex items-center justify-between text-xs font-mono-tabular">
+                      <span class="text-[#2B44FF] font-semibold">{{ ext.scope }}</span>
+                      <span class="text-[#5A6275]">Deadline: {{ ext.deadline }}</span>
+                    </div>
+                    <h3 class="font-display text-base font-bold text-[#0D0F17] leading-snug">
+                      {{ ext.title }}
+                    </h3>
+                    <p class="text-xs font-semibold text-[#0D0F17]">{{ ext.providerName }}</p>
+                    <p class="text-xs text-[#5A6275]">{{ ext.eligibilitySummary }}</p>
+                  </div>
+                  <div class="flex items-center justify-between pt-3 border-t border-[#DCE2EE]">
+                    <div>
+                      <span class="block text-[11px] text-[#5A6275]">Award Package</span>
+                      <span class="font-mono-tabular text-sm font-extrabold text-[#0D0F17]">
+                        {{ ext.annualAwardText }}
+                      </span>
+                    </div>
+                    <a
+                      [href]="ext.externalUrl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="px-3.5 py-2 text-xs font-semibold text-white bg-[#0D0F17] hover:bg-[#2B44FF] rounded-xl flex items-center gap-1 whitespace-nowrap"
+                    >
+                      <mat-icon class="!text-sm !w-4 !h-4 leading-none">open_in_new</mat-icon>
+                      <span>External Portal</span>
+                    </a>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </section>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- UNIFIED PROFILE, OTR & ROLE AUTHENTICATION HUB ON LANDING PAGE     -->
+    <!-- ================================================================= -->
+    <section
+      id="profile-auth-section"
+      data-testid="profile-auth-section"
+      class="relative z-10 pt-20 pb-4"
+    >
+      <div class="lusion-card rounded-3xl p-6 sm:p-9 max-w-6xl mx-auto">
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6 border-b border-[#DCE2EE]">
+          <div>
+            <div class="text-xs font-mono-tabular font-semibold text-[#2B44FF]">
+              UNIFIED IDENTITY, OTR REGISTRATION &amp; ROLE ACCESS GATEWAY
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[#0D0F17] mt-1">
+              Profile &amp; Portal Authentication (Student OTR · AISHE Institute · Ministry)
+            </h2>
+            <p class="text-xs sm:text-sm text-[#5A6275] mt-1">
+              Sign in or register as a Student to generate your One-Time Registration (OTR) ID and apply, or verify your AISHE Institute / Ministry credentials to unlock Leaf 02 and Leaf 03.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span
+              data-testid="firebase-cloud-status"
+              class="px-3 py-2 text-[11px] font-mono-tabular font-semibold rounded-xl bg-[#F4F6FA] border border-[#DCE2EE] text-[#0D0F17] flex items-center gap-1.5"
+            >
+              <span
+                class="w-2 h-2 rounded-full"
+                [class.bg-emerald-500]="store.firebaseConnected()"
+                [class.bg-amber-500]="!store.firebaseConnected()"
+              ></span>
+              <span>
+                {{
+                  store.firebaseConnected()
+                    ? 'Firebase Cloud Connected (' + store.firebaseRegion() + ')'
+                    : 'Firebase Local Cache Ready'
+                }}
+              </span>
+            </span>
+
+            <button
+              type="button"
+              data-testid="landing-google-firebase-btn"
+              (click)="signInWithGoogleFirebase()"
+              class="px-3.5 py-2.5 text-xs font-semibold text-[#0D0F17] bg-white hover:bg-[#F4F6FA] border border-[#DCE2EE] rounded-xl flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+            >
+              <mat-icon class="!text-sm !w-4 !h-4 leading-none text-[#2B44FF]">cloud_done</mat-icon>
+              <span>Sign In with Google (Firebase)</span>
+            </button>
+
+            <button
+              type="button"
+              data-testid="landing-admin-bypass-btn"
+              (click)="fillAdminBypassInForm()"
+              class="px-4 py-2.5 text-xs font-mono-tabular font-bold text-white bg-[#2B44FF] hover:bg-[#1E36E0] rounded-xl flex items-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap"
+            >
+              <mat-icon class="!text-sm !w-4 !h-4 leading-none">vpn_key</mat-icon>
+              <span>Bypass All Portals (admin&#64;gmail.com / admin123)</span>
+            </button>
+            @if (store.authSession().isAuthenticated) {
+              <button
+                type="button"
+                (click)="store.logout()"
+                class="px-3.5 py-2.5 text-xs font-semibold text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-200 rounded-xl flex items-center gap-1 cursor-pointer whitespace-nowrap"
+              >
+                <mat-icon class="!text-sm !w-4 !h-4 leading-none">logout</mat-icon>
+                <span>Sign Out</span>
+              </button>
+            }
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Left Column: Active Profile & OTR Eligibility Card -->
+          <div class="lg:col-span-5 bg-[#F4F6FA] p-6 rounded-2xl border border-[#DCE2EE] space-y-5">
+            <div class="flex items-center justify-between border-b border-[#DCE2EE] pb-3.5">
+              <div>
+                <span class="text-xs font-mono-tabular font-semibold text-[#2B44FF]">
+                  ACTIVE SESSION PROFILE
+                </span>
+                <h3 class="font-display text-lg font-extrabold text-[#0D0F17] mt-0.5">
+                  {{ store.authSession().displayName }}
+                </h3>
+              </div>
+              <span
+                data-testid="active-role-badge"
+                class="font-mono-tabular text-xs font-bold px-3 py-1 rounded-lg bg-white border border-[#DCE2EE] text-[#0D0F17]"
+              >
+                {{ store.authSession().role }}
+              </span>
+            </div>
+
+            <div class="space-y-2.5 text-xs font-mono-tabular">
+              <div class="flex justify-between">
+                <span class="text-[#5A6275]">Identity / OTR / KYC ID:</span>
+                <span class="font-bold text-[#2B44FF]">{{ store.authSession().badgeId }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#5A6275]">Enrolled / Verified Org:</span>
+                <span class="font-semibold text-[#0D0F17] text-right max-w-[230px] truncate">
+                  {{ store.authSession().organizationName }}
+                </span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#5A6275]">Scholar OTR Profile:</span>
+                <span class="font-semibold text-[#0D0F17]">
+                  {{ store.studentProfile().fullName }} ({{ store.studentProfile().academicPercentage }}%)
+                </span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#5A6275]">Annual Family Income:</span>
+                <span class="font-semibold text-[#0D0F17]">
+                  {{ formatInr(store.studentProfile().familyIncome) }} · {{ store.studentProfile().category }}
+                </span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#5A6275]">OTR Scheme Eligibility:</span>
+                <span class="font-bold text-emerald-700">
+                  {{ store.eligibilityBreakdown().eligible }} / {{ store.eligibilityBreakdown().total }} Schemes Eligible
+                </span>
+              </div>
+            </div>
+
+            <!-- Role Access Matrix Summary -->
+            <div class="pt-3 border-t border-[#DCE2EE] space-y-2">
+              <div class="text-[11px] font-mono-tabular font-semibold text-[#5A6275]">
+                PORTAL ACCESS CLEARANCE
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-center text-[11px] font-mono-tabular">
+                <div class="p-2 rounded-xl bg-white border border-[#DCE2EE]">
+                  <div class="font-bold text-[#0D0F17]">Leaf 01</div>
+                  <div class="text-emerald-700 font-semibold">
+                    {{ store.isStudentSignedIn() ? 'OTR Active' : 'Explore Open' }}
+                  </div>
+                </div>
+                <div class="p-2 rounded-xl bg-white border border-[#DCE2EE]">
+                  <div class="font-bold text-[#0D0F17]">Leaf 02 (INO)</div>
+                  <div
+                    [class]="
+                      store.canOpenInstitutePortal()
+                        ? 'text-emerald-700 font-semibold'
+                        : 'text-amber-700 font-semibold'
+                    "
+                  >
+                    {{ store.canOpenInstitutePortal() ? 'Unlocked' : 'INO Locked' }}
+                  </div>
+                </div>
+                <div class="p-2 rounded-xl bg-white border border-[#DCE2EE]">
+                  <div class="font-bold text-[#0D0F17]">Leaf 03 (Gov)</div>
+                  <div
+                    [class]="
+                      store.canOpenMinistryPortal()
+                        ? 'text-emerald-700 font-semibold'
+                        : 'text-amber-700 font-semibold'
+                    "
+                  >
+                    {{ store.canOpenMinistryPortal() ? 'Unlocked' : 'Gov Locked' }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Role Selector (Student OTR / AISHE Institute / Ministry) + Sign In / Register Forms -->
+          <div class="lg:col-span-7 space-y-5">
+            <!-- Role Selector Tabs -->
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex flex-wrap items-center gap-1.5 p-1 bg-[#F4F6FA] border border-[#DCE2EE] rounded-xl">
+                <button
+                  type="button"
+                  data-testid="auth-role-tab-student"
+                  (click)="selectAuthRoleTab('STUDENT')"
+                  [class]="
+                    store.activeAuthTab() === 'STUDENT'
+                      ? 'px-3.5 py-2 text-xs font-semibold rounded-lg bg-[#0D0F17] text-white cursor-pointer whitespace-nowrap'
+                      : 'px-3.5 py-2 text-xs font-medium text-[#5A6275] hover:text-[#0D0F17] cursor-pointer whitespace-nowrap'
+                  "
+                >
+                  1. Student (OTR)
+                </button>
+                <button
+                  type="button"
+                  data-testid="auth-role-tab-institute"
+                  (click)="selectAuthRoleTab('INSTITUTE')"
+                  [class]="
+                    store.activeAuthTab() === 'INSTITUTE'
+                      ? 'px-3.5 py-2 text-xs font-semibold rounded-lg bg-[#0D0F17] text-white cursor-pointer whitespace-nowrap'
+                      : 'px-3.5 py-2 text-xs font-medium text-[#5A6275] hover:text-[#0D0F17] cursor-pointer whitespace-nowrap'
+                  "
+                >
+                  2. Institute (AISHE INO)
+                </button>
+                <button
+                  type="button"
+                  data-testid="auth-role-tab-ministry"
+                  (click)="selectAuthRoleTab('MINISTRY')"
+                  [class]="
+                    store.activeAuthTab() === 'MINISTRY'
+                      ? 'px-3.5 py-2 text-xs font-semibold rounded-lg bg-[#0D0F17] text-white cursor-pointer whitespace-nowrap'
+                      : 'px-3.5 py-2 text-xs font-medium text-[#5A6275] hover:text-[#0D0F17] cursor-pointer whitespace-nowrap'
+                  "
+                >
+                  3. Ministry (PFMS)
+                </button>
+              </div>
+
+              <!-- Sign In vs Register Switch -->
+              <div class="flex items-center gap-1 p-1 bg-[#F4F6FA] border border-[#DCE2EE] rounded-xl">
+                <button
+                  type="button"
+                  data-testid="auth-mode-signin"
+                  (click)="store.activeAuthMode.set('SIGN_IN')"
+                  [class]="
+                    store.activeAuthMode() === 'SIGN_IN'
+                      ? 'px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-white text-[#2B44FF] shadow-2xs cursor-pointer whitespace-nowrap'
+                      : 'px-3.5 py-1.5 text-xs font-medium text-[#5A6275] cursor-pointer whitespace-nowrap'
+                  "
+                >
+                  Sign In
+                </button>
+                <button
+                  type="button"
+                  data-testid="auth-mode-register"
+                  (click)="store.activeAuthMode.set('REGISTER')"
+                  [class]="
+                    store.activeAuthMode() === 'REGISTER'
+                      ? 'px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-white text-[#2B44FF] shadow-2xs cursor-pointer whitespace-nowrap'
+                      : 'px-3.5 py-1.5 text-xs font-medium text-[#5A6275] cursor-pointer whitespace-nowrap'
+                  "
+                >
+                  Register / Verify KYC
+                </button>
+              </div>
+            </div>
+
+            @if (authFormFeedback(); as fbMsg) {
+              <div
+                class="p-3.5 rounded-xl text-xs font-semibold border"
+                [class.bg-emerald-50]="fbMsg.tone === 'success'"
+                [class.text-emerald-800]="fbMsg.tone === 'success'"
+                [class.border-emerald-200]="fbMsg.tone === 'success'"
+                [class.bg-rose-50]="fbMsg.tone === 'error'"
+                [class.text-rose-800]="fbMsg.tone === 'error'"
+                [class.border-rose-200]="fbMsg.tone === 'error'"
+              >
+                {{ fbMsg.text }}
+              </div>
+            }
+
+            <!-- MODE A: SIGN IN FORM (Works for Selected Role OR admin@gmail.com / admin123 Bypass) -->
+            @if (store.activeAuthMode() === 'SIGN_IN') {
+              <form
+                [formGroup]="signInForm"
+                (ngSubmit)="submitSignIn()"
+                class="bg-[#F4F6FA] p-6 rounded-2xl border border-[#DCE2EE] space-y-4"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono-tabular font-bold text-[#2B44FF]">
+                    SIGN IN AS {{ store.activeAuthTab() }} (OR ADMIN BYPASS)
+                  </span>
+                  <span class="text-[11px] font-mono-tabular text-[#5A6275]">
+                    Bypass: admin&#64;gmail.com / admin123
+                  </span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="landing-signin-email" class="block text-xs font-medium text-[#5A6275] mb-1">
+                      Registered Email / OTR / Official ID
+                    </label>
+                    <input
+                      id="landing-signin-email"
+                      data-testid="landing-signin-email"
+                      type="email"
+                      formControlName="email"
+                      placeholder="admin@gmail.com"
+                      class="w-full px-3.5 py-2.5 text-sm bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                    />
+                  </div>
+                  <div>
+                    <label for="landing-signin-password" class="block text-xs font-medium text-[#5A6275] mb-1">
+                      Password / PIN
+                    </label>
+                    <input
+                      id="landing-signin-password"
+                      data-testid="landing-signin-password"
+                      type="password"
+                      formControlName="password"
+                      placeholder="admin123"
+                      class="w-full px-3.5 py-2.5 text-sm bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                    />
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+                  <button
+                    type="button"
+                    (click)="store.activeAuthMode.set('REGISTER')"
+                    class="text-xs font-semibold text-[#2B44FF] hover:underline cursor-pointer"
+                  >
+                    New {{ store.activeAuthTab() }}? Complete OTR / KYC Registration →
+                  </button>
+
+                  <button
+                    type="submit"
+                    data-testid="landing-signin-submit"
+                    class="px-5 py-2.5 text-xs font-semibold text-white bg-[#0D0F17] hover:bg-[#2B44FF] rounded-xl flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+                  >
+                    <mat-icon class="!text-sm !w-4 !h-4 leading-none">login</mat-icon>
+                    <span>Sign In &amp; Sync Session</span>
+                  </button>
+                </div>
+              </form>
+            }
+
+            <!-- MODE B: REGISTER FORMS BY ROLE -->
+            @if (store.activeAuthMode() === 'REGISTER') {
+              <!-- 1. STUDENT OTR REGISTRATION FORM -->
+              @if (store.activeAuthTab() === 'STUDENT') {
+                <form
+                  [formGroup]="studentRegisterForm"
+                  (ngSubmit)="submitStudentOtrRegistration()"
+                  class="bg-[#F4F6FA] p-6 rounded-2xl border border-[#DCE2EE] space-y-4"
+                >
+                  <div class="text-xs font-mono-tabular font-bold text-[#2B44FF]">
+                    STUDENT ONE-TIME REGISTRATION (OTR) &amp; ELIGIBILITY CALCULATOR
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div>
+                      <label for="reg-stu-name" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Full Name (As per Aadhaar)
+                      </label>
+                      <input
+                        id="reg-stu-name"
+                        type="text"
+                        formControlName="fullName"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div>
+                      <label for="reg-stu-email" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Scholar Email Address
+                      </label>
+                      <input
+                        id="reg-stu-email"
+                        type="email"
+                        formControlName="email"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div>
+                      <label for="reg-stu-pass" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Create OTR Password
+                      </label>
+                      <input
+                        id="reg-stu-pass"
+                        type="password"
+                        formControlName="password"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div>
+                      <label for="reg-stu-marks" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Qualifying Marks (%)
+                      </label>
+                      <input
+                        id="reg-stu-marks"
+                        type="number"
+                        formControlName="academicPercentage"
+                        class="w-full px-3 py-2 text-xs font-mono-tabular bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div>
+                      <label for="reg-stu-income" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Family Income (₹/yr)
+                      </label>
+                      <input
+                        id="reg-stu-income"
+                        type="number"
+                        formControlName="familyIncome"
+                        class="w-full px-3 py-2 text-xs font-mono-tabular bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div>
+                      <label for="reg-stu-cat" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Social Category
+                      </label>
+                      <select
+                        id="reg-stu-cat"
+                        formControlName="category"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      >
+                        @for (cat of allCategories; track cat) {
+                          <option [value]="cat">{{ cat }}</option>
+                        }
+                      </select>
+                    </div>
+                    <div>
+                      <label for="reg-stu-course" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Course Level
+                      </label>
+                      <select
+                        id="reg-stu-course"
+                        formControlName="courseLevel"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      >
+                        @for (lvl of courseLevels; track lvl.id) {
+                          <option [value]="lvl.id">{{ lvl.label }}</option>
+                        }
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div>
+                      <label for="reg-stu-inst" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        AISHE Institution Name
+                      </label>
+                      <input
+                        id="reg-stu-inst"
+                        type="text"
+                        formControlName="institutionName"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div>
+                      <label for="reg-stu-aishe" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        AISHE / UDISE+ Code
+                      </label>
+                      <input
+                        id="reg-stu-aishe"
+                        type="text"
+                        formControlName="aisheCode"
+                        class="w-full px-3 py-2 text-xs font-mono-tabular bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div class="flex items-end">
+                      <button
+                        type="submit"
+                        data-testid="register-student-otr-btn"
+                        class="w-full py-2.5 px-4 text-xs font-semibold text-white bg-[#2B44FF] hover:bg-[#1E36E0] rounded-xl flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap"
+                      >
+                        <mat-icon class="!text-sm !w-4 !h-4 leading-none">how_to_reg</mat-icon>
+                        <span>Generate OTR &amp; Check Eligibility</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              }
+
+              <!-- 2. INSTITUTE NODAL OFFICER (AISHE / UDISE+ / NCVT) KYC REGISTRATION FORM -->
+              @if (store.activeAuthTab() === 'INSTITUTE') {
+                <form
+                  [formGroup]="instituteRegisterForm"
+                  (ngSubmit)="submitInstituteRegistration()"
+                  class="bg-[#F4F6FA] p-6 rounded-2xl border border-[#DCE2EE] space-y-4"
+                >
+                  <div class="text-xs font-mono-tabular font-bold text-[#2B44FF]">
+                    AISHE / UDISE+ / NCVT INSTITUTE NODAL OFFICER (INO) KYC REGISTRATION
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div>
+                      <label for="reg-ino-code" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        AISHE / UDISE+ / NCVT Code
+                      </label>
+                      <input
+                        id="reg-ino-code"
+                        type="text"
+                        formControlName="aisheOrUdiseCode"
+                        placeholder="e.g. U-0306 / C-19402"
+                        class="w-full px-3 py-2 text-xs font-mono-tabular bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div>
+                      <label for="reg-ino-cat" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Institution Registry Type
+                      </label>
+                      <select
+                        id="reg-ino-cat"
+                        formControlName="institutionCategory"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      >
+                        <option value="AISHE University / College">AISHE University / College</option>
+                        <option value="UDISE+ School">UDISE+ School</option>
+                        <option value="NCVT / ITI Polytechnic">NCVT / ITI Polytechnic</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="reg-ino-inst" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Registered Institution Name
+                      </label>
+                      <input
+                        id="reg-ino-inst"
+                        type="text"
+                        formControlName="institutionName"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div>
+                      <label for="reg-ino-hoi" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Head of Institute (HoI) Name
+                      </label>
+                      <input
+                        id="reg-ino-hoi"
+                        type="text"
+                        formControlName="headOfInstituteName"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div>
+                      <label for="reg-ino-name" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Nodal Officer (INO) Full Name
+                      </label>
+                      <input
+                        id="reg-ino-name"
+                        type="text"
+                        formControlName="inoOfficerName"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div>
+                      <label for="reg-ino-aadhaar" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        INO Aadhaar e-KYC (Last 4 Digits)
+                      </label>
+                      <input
+                        id="reg-ino-aadhaar"
+                        type="text"
+                        maxlength="4"
+                        formControlName="aadhaarLast4"
+                        class="w-full px-3 py-2 text-xs font-mono-tabular bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div>
+                      <label for="reg-ino-email" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Official Institutional Email (.ac.in / .edu.in)
+                      </label>
+                      <input
+                        id="reg-ino-email"
+                        type="email"
+                        formControlName="officialEmail"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div>
+                      <label for="reg-ino-pass" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        INO Portal Password
+                      </label>
+                      <input
+                        id="reg-ino-pass"
+                        type="password"
+                        formControlName="password"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div class="flex items-end">
+                      <button
+                        type="submit"
+                        data-testid="register-institute-ino-btn"
+                        class="w-full py-2.5 px-4 text-xs font-semibold text-white bg-[#2B44FF] hover:bg-[#1E36E0] rounded-xl flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap"
+                      >
+                        <mat-icon class="!text-sm !w-4 !h-4 leading-none">verified_user</mat-icon>
+                        <span>Verify AISHE KYC &amp; Unlock Leaf 02</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              }
+
+              <!-- 3. MINISTRY & PFMS NODAL AUTHORITY REGISTRATION FORM -->
+              @if (store.activeAuthTab() === 'MINISTRY') {
+                <form
+                  [formGroup]="ministryRegisterForm"
+                  (ngSubmit)="submitMinistryRegistration()"
+                  class="bg-[#F4F6FA] p-6 rounded-2xl border border-[#DCE2EE] space-y-4"
+                >
+                  <div class="text-xs font-mono-tabular font-bold text-[#2B44FF]">
+                    CENTRAL / STATE MINISTRY &amp; PFMS DBT AGENCY NODAL VERIFICATION
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label for="reg-min-name" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Sponsoring Ministry / Statutory Department
+                      </label>
+                      <input
+                        id="reg-min-name"
+                        type="text"
+                        formControlName="ministryName"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div>
+                      <label for="reg-min-pfms" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        PFMS Agency / Sanction Code
+                      </label>
+                      <input
+                        id="reg-min-pfms"
+                        type="text"
+                        formControlName="pfmsAgencyCode"
+                        class="w-full px-3 py-2 text-xs font-mono-tabular bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label for="reg-min-officer" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Ministry Nodal Officer (MNO) Full Name
+                      </label>
+                      <input
+                        id="reg-min-officer"
+                        type="text"
+                        formControlName="nodalOfficerName"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div>
+                      <label for="reg-min-cadre" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Designation &amp; Service Cadre
+                      </label>
+                      <input
+                        id="reg-min-cadre"
+                        type="text"
+                        formControlName="designationCadre"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div>
+                      <label for="reg-min-email" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Official NIC / Gov Email (.gov.in)
+                      </label>
+                      <input
+                        id="reg-min-email"
+                        type="email"
+                        formControlName="officialGovEmail"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div>
+                      <label for="reg-min-pass" class="block text-xs font-medium text-[#5A6275] mb-1">
+                        Ministry Portal Password
+                      </label>
+                      <input
+                        id="reg-min-pass"
+                        type="password"
+                        formControlName="password"
+                        class="w-full px-3 py-2 text-xs bg-white border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+                      />
+                    </div>
+                    <div class="flex items-end">
+                      <button
+                        type="submit"
+                        data-testid="register-ministry-nodal-btn"
+                        class="w-full py-2.5 px-4 text-xs font-semibold text-white bg-[#2B44FF] hover:bg-[#1E36E0] rounded-xl flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap"
+                      >
+                        <mat-icon class="!text-sm !w-4 !h-4 leading-none">gavel</mat-icon>
+                        <span>Verify PFMS &amp; Unlock Leaf 03</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              }
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 5. THREE HANGING PENDULUM / TREE-LEAF PORTAL FLASHCARDS           -->
+    <!-- ================================================================= -->
+    <section id="pendulum-portals" class="relative z-10 pt-16 pb-12">
+      <div class="text-center max-w-2xl mx-auto mb-4 space-y-2 bg-[#F4F6FA]/90 px-6 py-4 rounded-2xl border border-[#DCE2EE]">
+        <div class="text-xs font-mono-tabular font-semibold text-[#2B44FF]">
+          TRI-PORTAL SUSPENSION ARCHITECTURE
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-[#0D0F17]">
+          Three Synchronized Role Workspaces
+        </h2>
+        <p class="text-xs sm:text-sm text-[#5A6275]">
+          Leaf 01 is open for Student exploration &amp; OTR applications. Leaf 02 and Leaf 03 are role-guarded for verified AISHE Institutes and Ministry Nodal Authorities.
+        </p>
+      </div>
+
+      <!-- Precision 3-Way SVG Branching Stems Connecting directly to the 3 Pendulum Leaves -->
+      <div class="hidden lg:block w-full h-24 pointer-events-none -mb-2" aria-hidden="true">
+        <svg viewBox="0 0 1200 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <circle cx="600" cy="8" r="7" fill="#2B44FF" />
+          <path
+            d="M 600 8 C 600 54, 190 42, 190 98"
+            stroke="#2B44FF"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M 600 8 L 600 98"
+            stroke="#2B44FF"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M 600 8 C 600 54, 1010 42, 1010 98"
+            stroke="#2B44FF"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <!-- PENDULUM LEAF 01: STUDENT PORTAL -->
+        <div class="flex flex-col items-center">
+          <div class="w-3.5 h-3.5 rounded-full bg-white border-2 border-[#2B44FF] -mb-1.5 z-10" aria-hidden="true"></div>
+          <article
+            data-testid="pendulum-card-student"
+            class="lusion-card pendulum-leaf-1 rounded-3xl p-7 w-full flex flex-col justify-between gap-6"
+          >
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs font-mono-tabular text-[#5A6275]">
+                <span class="font-bold text-[#2B44FF]">LEAF 01 · STUDENT PORTAL</span>
+                <span class="text-emerald-700 font-semibold">
+                  {{ store.isStudentSignedIn() ? 'OTR SIGNED IN' : 'OPEN EXPLORER' }}
+                </span>
+              </div>
+
+              <h3 class="font-display text-2xl font-extrabold text-[#0D0F17]">
+                Scholar OTR, Smart Dossier &amp; Kanban Tracker
+              </h3>
+
+              <p class="text-xs sm:text-sm text-[#5A6275] leading-relaxed">
+                Explore active &amp; global scholarships, paste external portal links, scan certificates via 1-click OCR, and track your OTR applications across the Kanban pipeline.
+              </p>
+
+              <div class="pt-3 border-t border-[#DCE2EE] space-y-1.5 text-xs font-mono-tabular">
+                <div class="flex justify-between">
+                  <span class="text-[#5A6275]">Active OTR ID:</span>
+                  <span class="font-bold text-[#0D0F17]">{{ store.studentProfile().otrId }}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-[#5A6275]">100% Eligible Matches:</span>
+                  <span class="font-bold text-emerald-700">{{ store.eligibilityBreakdown().eligible }} Schemes</span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              data-testid="explore-portal-student"
+              (click)="openPortalFromCard('STUDENT', 'BROWSER')"
+              class="w-full py-3 px-4 text-xs font-mono-tabular font-bold text-white bg-[#2B44FF] hover:bg-[#1E36E0] rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <span>[ EXPLORE ↗ ]</span>
+              <span>STUDENT WORKSPACE</span>
+            </button>
+          </article>
+        </div>
+
+        <!-- PENDULUM LEAF 02: INSTITUTE NODAL OFFICER (INO) DESK (Restricted to Institute / Admin) -->
+        <div class="flex flex-col items-center">
+          <div class="w-3.5 h-3.5 rounded-full bg-white border-2 border-[#2B44FF] -mb-1.5 z-10" aria-hidden="true"></div>
+          <article
+            data-testid="pendulum-card-institute"
+            class="lusion-card pendulum-leaf-2 rounded-3xl p-7 w-full flex flex-col justify-between gap-6"
+          >
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs font-mono-tabular text-[#5A6275]">
+                <span class="font-bold text-[#2B44FF]">LEAF 02 · AISHE INO DESK</span>
+                @if (store.canOpenInstitutePortal()) {
+                  <span class="text-emerald-700 font-bold">KYC UNLOCKED</span>
+                } @else {
+                  <span class="text-amber-700 font-bold">INSTITUTE SIGN-IN REQ</span>
+                }
+              </div>
+
+              <h3 class="font-display text-2xl font-extrabold text-[#0D0F17]">
+                Institute Nodal Officer Verification Desk
+              </h3>
+
+              <p class="text-xs sm:text-sm text-[#5A6275] leading-relaxed">
+                Restricted to verified AISHE / UDISE+ institutions. Audit pending college applications, verify certificates, or flag defects that sync immediately to the student's Kanban board.
+              </p>
+
+              <div class="pt-3 border-t border-[#DCE2EE] space-y-1.5 text-xs font-mono-tabular">
+                <div class="flex justify-between">
+                  <span class="text-[#5A6275]">AISHE Queue Size:</span>
+                  <span class="font-bold text-[#0D0F17]">{{ store.applications().length }} Applications</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-[#5A6275]">Access Clearance:</span>
+                  <span class="font-bold text-[#2B44FF]">
+                    {{ store.canOpenInstitutePortal() ? 'Authorized INO / Admin' : 'Requires Institute Login' }}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              data-testid="explore-portal-institute"
+              (click)="openPortalFromCard('INSTITUTE')"
+              class="w-full py-3 px-4 text-xs font-mono-tabular font-bold text-white bg-[#0D0F17] hover:bg-[#2B44FF] rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <span>[ EXPLORE ↗ ]</span>
+              <span>{{ store.canOpenInstitutePortal() ? 'INO AUDITOR DESK' : 'SIGN IN AS INSTITUTE' }}</span>
+            </button>
+          </article>
+        </div>
+
+        <!-- PENDULUM LEAF 03: SCHEME & MINISTRY AUTHORITY (Restricted to Ministry / Admin) -->
+        <div class="flex flex-col items-center">
+          <div class="w-3.5 h-3.5 rounded-full bg-white border-2 border-[#2B44FF] -mb-1.5 z-10" aria-hidden="true"></div>
+          <article
+            data-testid="pendulum-card-ministry"
+            class="lusion-card pendulum-leaf-3 rounded-3xl p-7 w-full flex flex-col justify-between gap-6"
+          >
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs font-mono-tabular text-[#5A6275]">
+                <span class="font-bold text-[#2B44FF]">LEAF 03 · MINISTRY PORTAL</span>
+                @if (store.canOpenMinistryPortal()) {
+                  <span class="text-emerald-700 font-bold">PFMS UNLOCKED</span>
+                } @else {
+                  <span class="text-amber-700 font-bold">MINISTRY SIGN-IN REQ</span>
+                }
+              </div>
+
+              <h3 class="font-display text-2xl font-extrabold text-[#0D0F17]">
+                Scheme Gazette, Merit List &amp; PFMS Disbursal
+              </h3>
+
+              <p class="text-xs sm:text-sm text-[#5A6275] leading-relaxed">
+                Restricted to authorized Ministry &amp; PFMS Nodal Officers. Gazette new scholarship schemes, generate composite merit rankings, and trigger PFMS Direct Benefit Transfers.
+              </p>
+
+              <div class="pt-3 border-t border-[#DCE2EE] space-y-1.5 text-xs font-mono-tabular">
+                <div class="flex justify-between">
+                  <span class="text-[#5A6275]">Published Schemes:</span>
+                  <span class="font-bold text-[#0D0F17]">{{ store.schemes().length }} Active</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-[#5A6275]">Access Clearance:</span>
+                  <span class="font-bold text-emerald-700">
+                    {{ store.canOpenMinistryPortal() ? 'Authorized Ministry / Admin' : 'Requires Ministry Login' }}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              data-testid="explore-portal-ministry"
+              (click)="openPortalFromCard('MINISTRY')"
+              class="w-full py-3 px-4 text-xs font-mono-tabular font-bold text-white bg-[#0D0F17] hover:bg-[#2B44FF] rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <span>[ EXPLORE ↗ ]</span>
+              <span>{{ store.canOpenMinistryPortal() ? 'MINISTRY & PFMS PORTAL' : 'SIGN IN AS MINISTRY' }}</span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ===================================================================== -->
+<!-- ROLE ACCESS & OTR SIGN-IN GATEWAY MODAL (Triggered on Restricted Click)-->
+<!-- ===================================================================== -->
+@if (store.authGatewayPrompt(); as prompt) {
+  <div
+    data-testid="auth-gateway-modal"
+    class="fixed inset-0 z-60 bg-[#0D0F17]/45 backdrop-blur-xs flex items-center justify-center p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Portal Role Authentication Required"
+  >
+    <div class="bg-white rounded-3xl border border-[#DCE2EE] max-w-xl w-full p-6 sm:p-8 space-y-5 shadow-xl">
+      <div class="flex items-start justify-between gap-4 border-b border-[#DCE2EE] pb-4">
+        <div>
+          <span class="font-mono-tabular text-xs font-bold text-[#2B44FF]">
+            ROLE VERIFICATION GATEWAY · {{ prompt.targetRole }} PORTAL
+          </span>
+          <h3 class="font-display text-xl font-extrabold text-[#0D0F17] mt-1">
+            @if (prompt.targetRole === 'STUDENT') {
+              Student Sign-In or OTR Registration Required to Apply
+            } @else if (prompt.targetRole === 'INSTITUTE') {
+              Leaf 02 Restricted to Verified AISHE Institute Nodal Officers
+            } @else {
+              Leaf 03 Restricted to Authorized Ministry &amp; PFMS Authorities
+            }
+          </h3>
+        </div>
+        <button
+          type="button"
+          (click)="store.closeAuthGateway()"
+          class="text-[#5A6275] hover:text-[#0D0F17] cursor-pointer"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+
+      <p class="text-xs sm:text-sm text-[#5A6275] leading-relaxed bg-[#F4F6FA] p-4 rounded-2xl border border-[#DCE2EE]">
+        {{ prompt.reasonMessage }}
+      </p>
+
+      <!-- Quick Sign-In Form inside Modal -->
+      <form [formGroup]="signInForm" (ngSubmit)="submitSignIn()" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label for="modal-auth-email" class="block text-xs font-medium text-[#5A6275] mb-1">
+              {{ prompt.targetRole }} Email / Official ID
+            </label>
+            <input
+              id="modal-auth-email"
+              data-testid="modal-auth-email"
+              type="email"
+              formControlName="email"
+              class="w-full px-3.5 py-2 text-sm bg-[#F4F6FA] border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+            />
+          </div>
+          <div>
+            <label for="modal-auth-pass" class="block text-xs font-medium text-[#5A6275] mb-1">
+              Password
+            </label>
+            <input
+              id="modal-auth-pass"
+              data-testid="modal-auth-pass"
+              type="password"
+              formControlName="password"
+              class="w-full px-3.5 py-2 text-sm bg-[#F4F6FA] border border-[#DCE2EE] rounded-xl text-[#0D0F17]"
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-[#DCE2EE]">
+          <button
+            type="button"
+            data-testid="modal-admin-bypass-btn"
+            (click)="store.loginAdminBypass(prompt.pendingPortal)"
+            class="px-4 py-2.5 text-xs font-mono-tabular font-bold text-[#2B44FF] bg-[#F4F6FA] hover:bg-[#E2E8F0] border border-[#DCE2EE] rounded-xl flex items-center gap-1.5 cursor-pointer"
+          >
+            <mat-icon class="!text-sm !w-4 !h-4 leading-none">vpn_key</mat-icon>
+            <span>Bypass Login (admin&#64;gmail.com / admin123)</span>
+          </button>
+
+          <div class="flex items-center gap-2">
+            <a
+              href="#profile-auth-section"
+              (click)="store.activeAuthMode.set('REGISTER'); store.closeAuthGateway()"
+              class="px-3.5 py-2.5 text-xs font-semibold text-[#0D0F17] bg-[#F4F6FA] hover:bg-[#E2E8F0] border border-[#DCE2EE] rounded-xl whitespace-nowrap"
+            >
+              Full KYC Registration
+            </a>
+            <button
+              type="submit"
+              data-testid="modal-auth-submit-btn"
+              class="px-5 py-2.5 text-xs font-semibold text-white bg-[#2B44FF] hover:bg-[#1E36E0] rounded-xl flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+            >
+              <mat-icon class="!text-sm !w-4 !h-4 leading-none">login</mat-icon>
+              <span>Sign In &amp; Continue</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+}
+
+<!-- ===================================================================== -->
+<!-- 6. PROFESSIONAL PRODUCTION FOOTER WITH SUPPORT DESK                   -->
+<!-- ===================================================================== -->
+<footer
+  data-testid="grantly-footer"
+  class="relative z-10 bg-white border-t border-[#DCE2EE] text-[#0D0F17]"
+>
+  <div class="max-w-7xl mx-auto px-6 md:px-10 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-[#DCE2EE]">
+      <!-- Col 1: Brand & Architecture Statement -->
+      <div class="md:col-span-5 space-y-3">
+        <div class="font-display text-2xl font-extrabold tracking-tight text-[#0D0F17]">
+          GRANTLY
+        </div>
+        <p class="text-xs sm:text-sm text-[#5A6275] leading-relaxed max-w-md">
+          Unified Scholarship Discovery &amp; Direct Benefit Management Platform. Engineered with real-time eligibility intelligence inspired by Unstop and end-to-end OTR, AISHE L1 Institute verification, and PFMS disbursal workflows modeled on the National Scholarship Portal (NSP 2.0).
+        </p>
+        <div class="pt-1 text-xs font-mono-tabular text-[#5A6275]">
+          UIDAI e-KYC Compliant · AISHE / UDISE+ Integrated · NPCI DBT Bridge
+        </div>
+      </div>
+
+      <!-- Col 2: Platform Navigation -->
+      <div class="md:col-span-3 space-y-2.5 text-xs">
+        <div class="font-mono-tabular font-bold uppercase tracking-wider text-[#0D0F17]">
+          Platform Architecture
+        </div>
+        <ul class="space-y-2 text-[#5A6275]">
+          <li><a href="#flashcard-01" class="hover:text-[#2B44FF] transition-colors">01. Financial Aid Slab Calculator</a></li>
+          <li><a href="#flashcard-02" class="hover:text-[#2B44FF] transition-colors">02. Live Eligibility Matrix</a></li>
+          <li><a href="#flashcard-03" class="hover:text-[#2B44FF] transition-colors">03. 4-Step OTR &amp; PFMS Pipeline</a></li>
+          <li><a href="#flashcard-04" class="hover:text-[#2B44FF] transition-colors">04. National &amp; Global Scholarships</a></li>
+          <li><a href="#profile-auth-section" class="hover:text-[#2B44FF] transition-colors">05. OTR &amp; Nodal Role Authentication</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Support & Helpdesk Contact -->
+      <div class="md:col-span-4 space-y-2.5 text-xs">
+        <div class="font-mono-tabular font-bold uppercase tracking-wider text-[#0D0F17]">
+          Support &amp; Nodal Helpdesk
+        </div>
+        <p class="text-[#5A6275] leading-relaxed">
+          For OTR registration assistance, AISHE / UDISE+ Nodal Officer onboarding, external scholarship indexing, or PFMS transaction inquiries, reach out to our dedicated support desk:
+        </p>
+        <div class="p-3.5 rounded-2xl bg-[#F4F6FA] border border-[#DCE2EE] space-y-1.5">
+          <div class="text-[11px] font-mono-tabular text-[#5A6275]">OFFICIAL SUPPORT EMAIL</div>
+          <a
+            href="mailto:parthpanchal1932@gmail.com"
+            data-testid="footer-support-email"
+            class="font-mono-tabular text-sm font-bold text-[#2B44FF] hover:underline flex items-center gap-1.5"
+          >
+            <mat-icon class="!text-sm !w-4 !h-4 leading-none">mail</mat-icon>
+            <span>parthpanchal1932&#64;gmail.com</span>
+          </a>
+          <div class="text-[11px] text-[#5A6275]">
+             Mon – Sat · 09:00 IST to 18:00 IST · Direct Scholar &amp; Institutional Support
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-6 flex flex-wrap items-center justify-between gap-4 text-xs text-[#5A6275]">
+      <div>
+        &copy; 2026 GRANTLY — Unified Scholarship Discovery &amp; Management Portal. Crafted for Scholars, AISHE Institutions &amp; Ministries.
+      </div>
+      <div class="font-mono-tabular">
+        Support Contact: <a href="mailto:parthpanchal1932@gmail.com" class="text-[#0D0F17] font-semibold hover:text-[#2B44FF]">parthpanchal1932&#64;gmail.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- 7. DOCKED BOTTOM CORNER COUNTDOWN HUD (Once Page Unlocks) -->
+@if (preloaderUnlocked()) {
+  <aside
+    data-testid="docked-countdown-hud"
+    class="fixed bottom-4 right-4 z-30 bg-white/95 border border-[#DCE2EE] rounded-2xl px-4 py-2.5 shadow-md flex items-center gap-3 text-xs font-mono-tabular"
+  >
+    <span class="text-[#5A6275] font-medium">SCHOLARSHIP CYCLE LOCKS IN:</span>
+    <span class="text-[#2B44FF] font-bold">{{ countdownDisplay() }}</span>
+  </aside>
+}
+
+<!-- 8. FULL-SCREEN IN-PAGE PORTAL WORKSPACE DRAWER -->
+<app-workspace-drawer />
+

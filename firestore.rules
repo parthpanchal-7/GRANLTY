@@ -1,0 +1,298 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 1. Global Safety Net (Default Deny)
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 2. Hardened Global Primitives
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerifiedUser() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
+        (request.auth.token.email_verified == true && (
+          request.auth.token.email == 'parthpanchal1933@gmail.com' ||
+          request.auth.token.email == 'parthpanchal1932@gmail.com'
+        ))
+      );
+    }
+
+    // 3. Entity Validation Blueprints
+    function isValidUserWorkspace(data) {
+      return data.keys().hasAll([
+        'ownerId', 'email', 'role', 'fullName', 'otrId',
+        'academicPercentage', 'familyIncome', 'category', 'state',
+        'courseLevel', 'institutionName', 'aisheCode',
+        'aadhaarEkyc', 'dbtSeeded', 'updatedAt'
+      ]) &&
+      data.keys().hasOnly([
+        'ownerId', 'email', 'role', 'fullName', 'otrId',
+        'academicPercentage', 'familyIncome', 'category', 'state',
+        'courseLevel', 'institutionName', 'aisheCode',
+        'aadhaarEkyc', 'dbtSeeded', 'updatedAt'
+      ]) &&
+      isValidId(data.ownerId) &&
+      data.email is string && data.email.size() >= 3 && data.email.size() <= 160 &&
+      data.role is string && data.role.size() <= 32 &&
+      (data.role == 'STUDENT' || data.role == 'INSTITUTE' || data.role == 'MINISTRY' || data.role == 'SUPER_ADMIN') &&
+      data.fullName is string && data.fullName.size() >= 1 && data.fullName.size() <= 120 &&
+      data.otrId is string && data.otrId.size() >= 3 && data.otrId.size() <= 64 && data.otrId.matches('^[a-zA-Z0-9_\\-]+$') &&
+      data.academicPercentage is number && data.academicPercentage >= 0 && data.academicPercentage <= 100 &&
+      data.familyIncome is number && data.familyIncome >= 0 && data.familyIncome <= 10000000 &&
+      data.category is string && data.category.size() >= 2 && data.category.size() <= 40 &&
+      data.state is string && data.state.size() >= 2 && data.state.size() <= 64 &&
+      data.courseLevel is string && data.courseLevel.size() >= 2 && data.courseLevel.size() <= 40 &&
+      data.institutionName is string && data.institutionName.size() >= 2 && data.institutionName.size() <= 160 &&
+      data.aisheCode is string && data.aisheCode.size() >= 2 && data.aisheCode.size() <= 32 &&
+      data.aadhaarEkyc is bool &&
+      data.dbtSeeded is bool &&
+      data.updatedAt is timestamp;
+    }
+
+    function isValidScholarshipScheme(data) {
+      return data.keys().hasAll([
+        'id', 'authorId', 'code', 'title', 'ministry', 'providerType',
+        'annualAward', 'maxFamilyIncome', 'minPercentage',
+        'deadlineDays', 'totalSeats', 'createdAt'
+      ]) &&
+      data.keys().hasOnly([
+        'id', 'authorId', 'code', 'title', 'ministry', 'providerType',
+        'annualAward', 'maxFamilyIncome', 'minPercentage',
+        'deadlineDays', 'totalSeats', 'createdAt'
+      ]) &&
+      isValidId(data.id) &&
+      isValidId(data.authorId) &&
+      data.code is string && data.code.size() >= 2 && data.code.size() <= 40 &&
+      data.title is string && data.title.size() >= 3 && data.title.size() <= 180 &&
+      data.ministry is string && data.ministry.size() >= 2 && data.ministry.size() <= 160 &&
+      data.providerType is string && data.providerType.size() <= 40 &&
+      (data.providerType == 'Central Govt' || data.providerType == 'AICTE / UGC' || data.providerType == 'Corporate CSR') &&
+      data.annualAward is number && data.annualAward >= 1000 && data.annualAward <= 5000000 &&
+      data.maxFamilyIncome is number && data.maxFamilyIncome >= 10000 && data.maxFamilyIncome <= 10000000 &&
+      data.minPercentage is number && data.minPercentage >= 0 && data.minPercentage <= 100 &&
+      data.deadlineDays is number && data.deadlineDays >= 1 && data.deadlineDays <= 365 &&
+      data.totalSeats is number && data.totalSeats >= 1 && data.totalSeats <= 1000000 &&
+      data.createdAt is timestamp;
+    }
+
+    function isValidApplication(data) {
+      return data.keys().hasAll([
+        'id', 'ownerId', 'schemeId', 'schemeTitle', 'ministry',
+        'studentName', 'otrId', 'institutionName', 'aisheCode',
+        'category', 'academicPercentage', 'familyIncome', 'annualAward',
+        'status', 'submittedAt', 'inoRemark', 'createdAt', 'updatedAt'
+      ]) &&
+      data.keys().hasOnly([
+        'id', 'ownerId', 'schemeId', 'schemeTitle', 'ministry',
+        'studentName', 'otrId', 'institutionName', 'aisheCode',
+        'category', 'academicPercentage', 'familyIncome', 'annualAward',
+        'status', 'submittedAt', 'inoRemark', 'createdAt', 'updatedAt'
+      ]) &&
+      isValidId(data.id) &&
+      isValidId(data.ownerId) &&
+      isValidId(data.schemeId) &&
+      data.schemeTitle is string && data.schemeTitle.size() >= 2 && data.schemeTitle.size() <= 180 &&
+      data.ministry is string && data.ministry.size() >= 2 && data.ministry.size() <= 160 &&
+      data.studentName is string && data.studentName.size() >= 1 && data.studentName.size() <= 120 &&
+      data.otrId is string && data.otrId.size() >= 3 && data.otrId.size() <= 64 &&
+      data.institutionName is string && data.institutionName.size() >= 2 && data.institutionName.size() <= 160 &&
+      data.aisheCode is string && data.aisheCode.size() >= 2 && data.aisheCode.size() <= 32 &&
+      data.category is string && data.category.size() >= 2 && data.category.size() <= 40 &&
+      data.academicPercentage is number && data.academicPercentage >= 0 && data.academicPercentage <= 100 &&
+      data.familyIncome is number && data.familyIncome >= 0 && data.familyIncome <= 10000000 &&
+      data.annualAward is number && data.annualAward >= 0 && data.annualAward <= 5000000 &&
+      data.status is string && data.status.size() <= 32 &&
+      (
+        data.status == 'Submitted' ||
+        data.status == 'Defective' ||
+        data.status == 'Institute Verified' ||
+        data.status == 'Ministry Approved' ||
+        data.status == 'Disbursed' ||
+        data.status == 'Rejected'
+      ) &&
+      data.submittedAt is string && data.submittedAt.size() >= 4 && data.submittedAt.size() <= 40 &&
+      data.inoRemark is string && data.inoRemark.size() <= 400 &&
+      data.createdAt is timestamp &&
+      data.updatedAt is timestamp;
+    }
+
+    function isValidExternalLink(data) {
+      return data.keys().hasAll([
+        'id', 'ownerId', 'title', 'providerName', 'scope',
+        'annualAwardText', 'deadline', 'externalUrl',
+        'eligibilitySummary', 'submittedBy', 'createdAt'
+      ]) &&
+      data.keys().hasOnly([
+        'id', 'ownerId', 'title', 'providerName', 'scope',
+        'annualAwardText', 'deadline', 'externalUrl',
+        'eligibilitySummary', 'submittedBy', 'createdAt'
+      ]) &&
+      isValidId(data.id) &&
+      isValidId(data.ownerId) &&
+      data.title is string && data.title.size() >= 2 && data.title.size() <= 180 &&
+      data.providerName is string && data.providerName.size() >= 2 && data.providerName.size() <= 160 &&
+      data.scope is string && data.scope.size() <= 64 &&
+      (
+        data.scope == 'Global / International' ||
+        data.scope == 'External University / Institute' ||
+        data.scope == 'Autonomous Ministry Portal'
+      ) &&
+      data.annualAwardText is string && data.annualAwardText.size() >= 1 && data.annualAwardText.size() <= 120 &&
+      data.deadline is string && data.deadline.size() >= 1 && data.deadline.size() <= 64 &&
+      data.externalUrl is string && data.externalUrl.size() >= 8 && data.externalUrl.size() <= 300 &&
+      data.eligibilitySummary is string && data.eligibilitySummary.size() >= 2 && data.eligibilitySummary.size() <= 300 &&
+      data.submittedBy is string && data.submittedBy.size() >= 2 && data.submittedBy.size() <= 64 &&
+      data.createdAt is timestamp;
+    }
+
+    // 4. Collection Match Blocks
+    match /admins/{adminId} {
+      allow get: if isSignedIn() && isValidId(adminId) && (request.auth.uid == adminId || isAdmin());
+      allow list, create, update, delete: if false;
+    }
+
+    match /user_workspaces/{userId} {
+      // PII Isolation: strictly owner or admin, no list allowed
+      allow get: if isSignedIn() && isValidId(userId) && (request.auth.uid == userId || isAdmin());
+      allow list: if false;
+
+      allow create: if isVerifiedUser() &&
+        isValidId(userId) &&
+        isValidUserWorkspace(incoming()) &&
+        request.auth.uid == userId &&
+        incoming().ownerId == request.auth.uid &&
+        incoming().role == 'STUDENT' &&
+        incoming().updatedAt == request.time;
+
+      allow update: if isVerifiedUser() &&
+        isValidId(userId) &&
+        isValidUserWorkspace(incoming()) && (
+          isAdmin() || (
+            request.auth.uid == userId &&
+            incoming().ownerId == existing().ownerId &&
+            incoming().role == existing().role &&
+            incoming().email == existing().email &&
+            incoming().updatedAt == request.time &&
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'fullName', 'otrId', 'academicPercentage', 'familyIncome',
+              'category', 'state', 'courseLevel', 'institutionName',
+              'aisheCode', 'aadhaarEkyc', 'dbtSeeded', 'updatedAt'
+            ])
+          )
+        );
+
+      allow delete: if isAdmin() && isValidId(userId);
+    }
+
+    match /scholarship_schemes/{schemeId} {
+      allow get: if isSignedIn() && isValidId(schemeId);
+      allow list: if isSignedIn() && resource.data.authorId == request.auth.uid;
+
+      allow create: if isVerifiedUser() &&
+        isValidId(schemeId) &&
+        isValidScholarshipScheme(incoming()) &&
+        incoming().id == schemeId &&
+        incoming().authorId == request.auth.uid &&
+        incoming().createdAt == request.time;
+
+      allow update: if isVerifiedUser() &&
+        isValidId(schemeId) &&
+        isValidScholarshipScheme(incoming()) && (
+          isAdmin() || (
+            existing().authorId == request.auth.uid &&
+            incoming().id == existing().id &&
+            incoming().authorId == existing().authorId &&
+            incoming().createdAt == existing().createdAt &&
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'title', 'annualAward', 'maxFamilyIncome', 'minPercentage', 'deadlineDays', 'totalSeats'
+            ])
+          )
+        );
+
+      allow delete: if isAdmin() && isValidId(schemeId);
+    }
+
+    match /applications/{applicationId} {
+      allow get: if isSignedIn() && isValidId(applicationId) && (existing().ownerId == request.auth.uid || isAdmin());
+      allow list: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+
+      allow create: if isVerifiedUser() &&
+        isValidId(applicationId) &&
+        isValidApplication(incoming()) &&
+        incoming().id == applicationId &&
+        incoming().ownerId == request.auth.uid &&
+        incoming().status == 'Submitted' &&
+        incoming().createdAt == request.time &&
+        incoming().updatedAt == request.time;
+
+      allow update: if isVerifiedUser() &&
+        isValidId(applicationId) &&
+        isValidApplication(incoming()) && (
+          isAdmin() || (
+            existing().ownerId == request.auth.uid &&
+            existing().status != 'Disbursed' &&
+            existing().status != 'Rejected' &&
+            incoming().id == existing().id &&
+            incoming().ownerId == existing().ownerId &&
+            incoming().schemeId == existing().schemeId &&
+            incoming().createdAt == existing().createdAt &&
+            incoming().updatedAt == request.time &&
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'status', 'inoRemark', 'updatedAt'
+            ])
+          )
+        );
+
+      allow delete: if isAdmin() && isValidId(applicationId);
+    }
+
+    match /external_links/{linkId} {
+      allow get: if isSignedIn() && isValidId(linkId);
+      allow list: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+
+      allow create: if isVerifiedUser() &&
+        isValidId(linkId) &&
+        isValidExternalLink(incoming()) &&
+        incoming().id == linkId &&
+        incoming().ownerId == request.auth.uid &&
+        incoming().createdAt == request.time;
+
+      allow update: if isVerifiedUser() &&
+        isValidId(linkId) &&
+        isValidExternalLink(incoming()) && (
+          isAdmin() || (
+            existing().ownerId == request.auth.uid &&
+            incoming().id == existing().id &&
+            incoming().ownerId == existing().ownerId &&
+            incoming().createdAt == existing().createdAt &&
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'title', 'providerName', 'scope', 'annualAwardText', 'deadline', 'externalUrl', 'eligibilitySummary'
+            ])
+          )
+        );
+
+      allow delete: if isAdmin() && isValidId(linkId);
+    }
+  }
+}

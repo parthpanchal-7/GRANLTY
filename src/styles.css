@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --bg-canvas: #F4F6FA;
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --text-ink: #0D0F17;
+  --text-muted: #5A6275;
+  --accent-cobalt: #2B44FF;
+  --accent-indigo: #6366F1;
+  --border-hairline: 1px solid #DCE2EE;
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--bg-canvas);
+  color: var(--text-ink);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Lusion Daylight Surface Cards */
+.lusion-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #DCE2EE;
+  box-shadow: 0 20px 50px -15px rgba(13, 15, 23, 0.06), 0 1px 2px 0 rgba(13, 15, 23, 0.03);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lusion-card:hover {
+  border-color: #B4C2DC;
+  box-shadow: 0 28px 60px -15px rgba(43, 68, 255, 0.09), 0 2px 6px 0 rgba(13, 15, 23, 0.04);
+}
+
+/* Harmonic Pendulum Sway for Bottom 3 Tree-Leaf Portal Flashcards */
+@keyframes pendulumSwayLeft {
+  0% {
+    transform: perspective(1000px) rotateZ(1.8deg) rotateX(-0.8deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateZ(-1.1deg) rotateX(0.5deg);
+  }
+}
+
+@keyframes pendulumSwayCenter {
+  0% {
+    transform: perspective(1000px) rotateZ(-1.5deg) rotateX(0.8deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateZ(0.8deg) rotateX(-0.4deg);
+  }
+}
+
+@keyframes pendulumSwayRight {
+  0% {
+    transform: perspective(1000px) rotateZ(1.6deg) rotateX(-0.6deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateZ(-0.9deg) rotateX(0.5deg);
+  }
+}
+
+.pendulum-leaf-1 {
+  transform-origin: top center;
+  animation: pendulumSwayLeft 0.55s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards;
+}
+
+.pendulum-leaf-2 {
+  transform-origin: top center;
+  animation: pendulumSwayCenter 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards;
+}
+
+.pendulum-leaf-3 {
+  transform-origin: top center;
+  animation: pendulumSwayRight 0.55s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards;
+}
+
+.pendulum-leaf-1:hover,
+.pendulum-leaf-2:hover,
+.pendulum-leaf-3:hover {
+  transform: perspective(1000px) rotateX(4deg) rotateY(-3deg) translateY(-6px) scale(1.015);
+  border-color: #2B44FF;
+  box-shadow: 0 32px 64px -16px rgba(43, 68, 255, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pendulum-leaf-1,
+  .pendulum-leaf-2,
+  .pendulum-leaf-3 {
+    animation: none;
+  }
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F6FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2B44FF;
+}

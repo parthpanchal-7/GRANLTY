@@ -1,0 +1,367 @@
+{
+  "entities": {
+    "UserWorkspace": {
+      "title": "UserWorkspace",
+      "description": "Stores an authenticated scholar or officer's OTR profile and KYC state in Firestore.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Firebase Auth UID of the workspace owner."
+        },
+        "email": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "Verified email address of the user."
+        },
+        "role": {
+          "type": "string",
+          "enum": ["STUDENT", "INSTITUTE", "MINISTRY", "SUPER_ADMIN"],
+          "maxLength": 32,
+          "description": "Role of the user."
+        },
+        "fullName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "description": "Full name as per Aadhaar or official registry."
+        },
+        "otrId": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 64,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Issued One-Time Registration or AISHE/PFMS badge ID."
+        },
+        "academicPercentage": {
+          "type": "number",
+          "description": "Qualifying exam percentage (0 to 100)."
+        },
+        "familyIncome": {
+          "type": "number",
+          "description": "Annual family income in INR."
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 40,
+          "description": "Statutory social category."
+        },
+        "state": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "Domicile state."
+        },
+        "courseLevel": {
+          "type": "string",
+          "maxLength": 40,
+          "description": "Current academic course level."
+        },
+        "institutionName": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "Enrolled AISHE institution name."
+        },
+        "aisheCode": {
+          "type": "string",
+          "maxLength": 32,
+          "description": "AISHE / UDISE+ institution code."
+        },
+        "aadhaarEkyc": {
+          "type": "boolean",
+          "description": "Whether UIDAI Aadhaar e-KYC is active."
+        },
+        "dbtSeeded": {
+          "type": "boolean",
+          "description": "Whether NPCI bank account DBT seeding is active."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of last profile sync."
+        }
+      },
+      "required": [
+        "ownerId",
+        "email",
+        "role",
+        "fullName",
+        "otrId",
+        "academicPercentage",
+        "familyIncome",
+        "category",
+        "state",
+        "courseLevel",
+        "institutionName",
+        "aisheCode",
+        "aadhaarEkyc",
+        "dbtSeeded",
+        "updatedAt"
+      ]
+    },
+    "ScholarshipSchemeDoc": {
+      "title": "ScholarshipSchemeDoc",
+      "description": "Represents a scholarship scheme published to the GRANTLY catalog.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "authorId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "code": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 40
+        },
+        "title": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 180
+        },
+        "ministry": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 160
+        },
+        "providerType": {
+          "type": "string",
+          "enum": ["Central Govt", "AICTE / UGC", "Corporate CSR"],
+          "maxLength": 40
+        },
+        "annualAward": {
+          "type": "number"
+        },
+        "maxFamilyIncome": {
+          "type": "number"
+        },
+        "minPercentage": {
+          "type": "number"
+        },
+        "deadlineDays": {
+          "type": "number"
+        },
+        "totalSeats": {
+          "type": "number"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "authorId",
+        "code",
+        "title",
+        "ministry",
+        "providerType",
+        "annualAward",
+        "maxFamilyIncome",
+        "minPercentage",
+        "deadlineDays",
+        "totalSeats",
+        "createdAt"
+      ]
+    },
+    "ApplicationDoc": {
+      "title": "ApplicationDoc",
+      "description": "Represents a student's scholarship application synchronized across Student, INO, and Ministry portals.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "ownerId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "schemeId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "schemeTitle": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 180
+        },
+        "ministry": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 160
+        },
+        "studentName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "otrId": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 64
+        },
+        "institutionName": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 160
+        },
+        "aisheCode": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 32
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "academicPercentage": {
+          "type": "number"
+        },
+        "familyIncome": {
+          "type": "number"
+        },
+        "annualAward": {
+          "type": "number"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Submitted", "Defective", "Institute Verified", "Ministry Approved", "Disbursed", "Rejected"],
+          "maxLength": 32
+        },
+        "submittedAt": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "inoRemark": {
+          "type": "string",
+          "maxLength": 400
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "ownerId",
+        "schemeId",
+        "schemeTitle",
+        "ministry",
+        "studentName",
+        "otrId",
+        "institutionName",
+        "aisheCode",
+        "category",
+        "academicPercentage",
+        "familyIncome",
+        "annualAward",
+        "status",
+        "submittedAt",
+        "inoRemark",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "ExternalScholarshipDoc": {
+      "title": "ExternalScholarshipDoc",
+      "description": "External or Global scholarship link submitted by a user.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "ownerId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 180
+        },
+        "providerName": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 160
+        },
+        "scope": {
+          "type": "string",
+          "enum": ["Global / International", "External University / Institute", "Autonomous Ministry Portal"],
+          "maxLength": 64
+        },
+        "annualAwardText": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "deadline": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "externalUrl": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "eligibilitySummary": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "submittedBy": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "ownerId",
+        "title",
+        "providerName",
+        "scope",
+        "annualAwardText",
+        "deadline",
+        "externalUrl",
+        "eligibilitySummary",
+        "submittedBy",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/user_workspaces/{userId}": {
+      "schema": { "$ref": "#/entities/UserWorkspace" },
+      "description": "Stores private OTR profile and KYC state per authenticated user."
+    },
+    "/scholarship_schemes/{schemeId}": {
+      "schema": { "$ref": "#/entities/ScholarshipSchemeDoc" },
+      "description": "Stores custom gazetted scholarship schemes."
+    },
+    "/applications/{applicationId}": {
+      "schema": { "$ref": "#/entities/ApplicationDoc" },
+      "description": "Stores scholarship applications."
+    },
+    "/external_links/{linkId}": {
+      "schema": { "$ref": "#/entities/ExternalScholarshipDoc" },
+      "description": "Stores user-submitted external and global scholarship links."
+    }
+  }
+}
