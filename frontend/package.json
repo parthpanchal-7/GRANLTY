@@ -1,0 +1,12 @@
+{
+  "name": "grantly-frontend",
+  "version": "1.0.0",
+  "description": "Angular 21 + Three.js Daylight WebGL Frontend for GRANTLY Scholarship Platform",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix .. run dev",
+    "build": "npm --prefix .. run build",
+    "lint": "npm --prefix .. run lint",
+    "test": "npx tsx --test src/app/core/scholarship-rules.test.ts"
+  }
+}

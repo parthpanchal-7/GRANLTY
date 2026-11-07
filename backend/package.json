@@ -1,0 +1,11 @@
+{
+  "name": "grantly-backend",
+  "version": "1.0.0",
+  "description": "Express REST API & Angular SSR Backend for GRANTLY Scholarship Platform",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix .. run dev",
+    "build": "npm --prefix .. run build",
+    "start": "node ../dist/app/server/server.mjs"
+  }
+}

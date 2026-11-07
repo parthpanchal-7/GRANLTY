@@ -80,14 +80,52 @@ npm run dev
 ### Verification Commands
 ```bash
 # Run pure business logic unit tests (OTR, RBAC, Aid Slabs, Merit List, PFMS DBT)
-npx tsx --test src/app/core/scholarship-rules.test.ts
+npx tsx --test frontend/src/app/core/scholarship-rules.test.ts
 
-# Lint TypeScript, Angular templates, and Firestore Security Rules
+# Lint TypeScript, Angular templates, Backend API, and Firestore Security Rules
 npm run lint
 npx eslint firestore.rules
 
-# Production build (outputs static bundle to dist/app/browser)
+# Production build (outputs browser bundle to dist/app/browser and SSR server to dist/app/server)
 npm run build
+```
+
+---
+
+## Repository Structure (`frontend/` + `backend/`)
+
+```text
+├── frontend/                              # Angular 21 + Three.js Daylight WebGL Client
+│   ├── public/
+│   │   └── favicon.ico
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── components/
+│   │   │   │   ├── three-stage/           # Studio-lit porcelain & cobalt Three.js stage
+│   │   │   │   └── workspace-drawer/      # In-page Student, INO & Ministry portals
+│   │   │   ├── core/
+│   │   │   │   ├── firebase-client.ts     # Firebase Auth & Cloud Firestore (asia-south1) sync
+│   │   │   │   ├── grantly-store.ts       # Reactive Signal state & RBAC store
+│   │   │   │   ├── scholarship-rules.ts   # Pure business logic (Aid slabs, OTR, Merit, PFMS)
+│   │   │   │   └── scholarship-rules.test.ts
+│   │   │   ├── app.ts                     # Main landing page, preloader & spine choreography
+│   │   │   ├── app.html                   # Daylight flashcards, pendulum leaves & Auth Hub
+│   │   │   └── app.css                    # Lusion Daylight tokens & pendulum physics
+│   │   ├── index.html
+│   │   ├── main.ts
+│   │   └── styles.css
+│   └── package.json
+├── backend/                               # Express 5 REST API & Angular SSR Server
+│   ├── routes/
+│   │   └── scholarship.routes.ts          # /api/health, /api/schemes, /api/aid-slab/calculate, /api/pfms/status
+│   ├── server.ts                          # Express server entry point & SSR request handler
+│   └── package.json
+├── firestore.rules                        # Zero-Trust Cloud Firestore Security Rules
+├── firebase-blueprint.json                # Firestore collections & schema blueprint
+├── vercel.json                            # Vercel deployment manifest
+├── firebase.json                          # Firebase Hosting & Firestore deployment manifest
+├── render.yaml                            # Render static/web deployment blueprint
+└── package.json                           # Root workspace build & dev orchestration
 ```
 
 ---
